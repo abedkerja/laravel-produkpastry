@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', ['as' => 'home', 'uses' => 'frontend\DepanController@index']);
+Route::get('/', ['as' => 'home', 'uses' => 'DepanController@index']);
 Route::get('/produk', 'DepanController@produklist');
 Route::get('/produk/{id}', 'DepanController@produk');
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\frontend;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -9,9 +9,14 @@ use App\Model;
 
 class DepanController extends Controller
 {
+    public function __construct()
+    {
+        $this->data['produks']  = Model\Produk::orderBy('id')->get();
+    }
+
     public function index()
     {
-        return view ('frontend.dashboard');
+        return view ('frontend.dashboard', $this->data);
     }
 
     public function produklist()

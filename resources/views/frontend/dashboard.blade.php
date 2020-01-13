@@ -56,18 +56,17 @@
             <div class="py-4">
                 <div class="row">
                     <div class="owl-carousel owl-theme">
-                        {{-- @foreach($kejuruan as $jurusan) --}}
+                        @foreach($produks as $produk)
                         <div class="item">
                             <div class="card-deck">
-                                <div class="col-md-12 col-lg-4">
+                                <div class="col-sm-4 col-md-8 col-lg-12">
                                     <div class="card mb-4">
-                                        <img class="card-img-top" src="#" alt="Card image cap">
+                                        <img class="card-img-top" src="{{asset('storage/'.$produk->image)}}" style="max-height:200px;max-width:100%;margin-top:0px;">
                                         <div class="card-body">
-                                            <h6 class="category text-danger">Produk Kami</h6>
-                                            <h4 class="card-title text-warning">Find Great Places to Work While Travelling</h4>
-                                            <p class="card-text">He seems sinking under the evidence could not only grieve and a visit. The father is to bless and placed in his length hid...</p>
+                                            <h4 class="category text-info">{{$produk->nama_produk}}</h4>
+                                            <h6 class="card-title text-warning">Rp. {{$produk->harga}},-</h6>
+                                            <p class="card-text">{!! substr($produk->description, 0, 180) !!} </p>
                                         </div>
-                                        <hr>
                                         <div class="card-footer">
                                             <a class="btn btn-outline-warning btn-pill" href="#">Read More &rarr;</a> 
                                         </div>
@@ -75,7 +74,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- @endforeach --}}
+                        @endforeach
                     </div>
                 </div>
             </div>
