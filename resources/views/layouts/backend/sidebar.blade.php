@@ -28,7 +28,7 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            Profile & Blog
+            Profile & Resep
         </div>
 
         <!-- Nav Item - Profile Usaha -->
@@ -40,14 +40,14 @@
     
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-        <a class="nav-link" href="{{route ('blog.index')}}">
+        <a class="nav-link" href="{{route ('resep.index')}}">
             <i class="fas fa-fw fa-blog"></i>
-            <span>Blog</span></a>
+            <span>Resep</span></a>
         </li>
 
         <!-- Heading -->
         <div class="sidebar-heading">
-        Produk & Stock
+        Produk & Testimonial
         </div>
 
         <!-- Nav Item - Charts -->
@@ -59,9 +59,9 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-        <a class="nav-link" href="{{route ('stok.index')}}">
+        <a class="nav-link" href="{{route ('testimonial.index')}}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Stock</span></a>
+            <span>Testimonial</span></a>
         </li>
 
         <!-- Divider -->

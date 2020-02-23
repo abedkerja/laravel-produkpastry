@@ -28,10 +28,10 @@ class ProdukCtrl extends Controller
                         'model'         => $produks,
                         'form_url'    => route('produk.destroy', $produks->id),
                         'edit_url'      => route('produk.edit', $produks->id)]);
+                })
+                ->addColumn('description', function($produks){
+                    return strip_tags($produks->description);
                 })->make(true);
-                // ->addColumn('description', function($produks){
-                //     return strip_tags($produks->description);
-                // })->make(true);
         }
 
         $html = $htmlBuilder
@@ -66,7 +66,7 @@ class ProdukCtrl extends Controller
             "nama_produk"   => "required|min:3|max:25",
             "image"         => "required",
             "harga"         => "required|numeric|digits_between:4,12",
-            "description"   => "required|min:20|max:1000"
+            "description"   => "required|min:20|max:10000"
         ])->validate();
 
         $new_produk                 = new \App\Model\Produk;
@@ -132,16 +132,16 @@ class ProdukCtrl extends Controller
         $update_produk->description = $request->get('description');
 
         if($request->file('image')){
-            if ($user->avatar && file_exists(storage_path('app/public/' . $update_produk->image))) {
+            if ($update_produk->image && file_exists(storage_path('app/public/' . $update_produk->image))) {
                 \Storage::delete('public/' . $update_produk->image);
             }
-            $file = $request->file('image')->store('images', 'public');
+            $file = $request->file('image')->store('image-produk', 'public');
             $update_produk->image = $file;
         }
 
         $update_produk->save();
 
-        return redirect()->route('produk.edit', $update_produk->id)->with('status', 'Data produk berhasil diubah');
+        return redirect()->route('produk.index', $update_produk->id)->with('status', 'Data produk berhasil diubah');
     }
 
     /**
@@ -152,7 +152,7 @@ class ProdukCtrl extends Controller
      */
     public function destroy($id)
     {
-        $produk = \App\Model\Produk::findOrFail($id);
+        $produk = Produk::findOrFail($id);
         $produk->delete();
         return redirect()->route('produk.index')->with('status', 'Data produk berhasil dihapus');
     }

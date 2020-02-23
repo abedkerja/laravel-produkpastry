@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class BuatTabelStock extends Migration
+class BuatTabelTestimonial extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class BuatTabelStock extends Migration
      */
     public function up()
     {
-        Schema::create('tabel_stock', function (Blueprint $table) {
+        Schema::create('tabel_testimonial', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->bigInteger('produk_id')->unsigned();
-            $table->foreign('produk_id')->references('id')->on('tabel_produk');
-
-            $table->bigInteger('jumlah_stok');
+            $table->string('nama_testi');
+            $table->string('image_testi')->comment('Hanya menampilkan pathnya saja');
+            $table->text('deskripsi_testi');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class BuatTabelStock extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tabel_stock');
+        Schema::dropIfExists('tabel_testimonial');
     }
 }

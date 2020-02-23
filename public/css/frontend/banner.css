@@ -1,0 +1,46 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+section {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background: #ffc02a
+		url(https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
+	background-size: cover;
+	opacity: 1;
+	filter: alpha(opacity=100);
+	height: 100vh;
+}
+
+section:hover {
+	opacity: 0.75;
+	filter: alpha(opacity=75); /* For IE8 and earlier */
+}
+
+#curve {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+#curve path {
+	fill: #f9fafc;
+}
+
+section.sec2 {
+	width: 100%;
+	height: 0vh;
+	background: #f9fafc;
+}
+
+section #satu {
+	position: relative;
+	width: 70%;
+	left: 50px;
+	top: 100px;
+	z-index: 2;
+	font-weight: 500;
+}

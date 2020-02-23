@@ -14,6 +14,9 @@
 Route::get('/', ['as' => 'home', 'uses' => 'DepanController@index']);
 Route::get('/produk', 'DepanController@produklist');
 Route::get('/produk/{id}', 'DepanController@produk');
+Route::get('/profile', 'DepanController@profile');
+Route::get('/resep', 'DepanController@resep');
+Route::get('/testimonial', 'DepanController@testimonial');
 
 
 // Auth::routes();
@@ -38,8 +41,8 @@ Route::group(['namespace' => 'backend','prefix' => 'admin','middleware' => 'admi
     Route::get('/', 'DashboardCtrl@index')->name('admin');
     Route::resource('produk','ProdukCtrl');
     Route::resource('profile','ProfileUsaha');
-    Route::resource('stok', 'StokCtrl');
-    Route::resource('blog','BlogCtrl');
+    Route::resource('testimonial', 'TestimonialCtrl');
+    Route::resource('resep','ResepCtrl');
 
     // Route::resource('pengumuman','PengumumanCtrl');
 

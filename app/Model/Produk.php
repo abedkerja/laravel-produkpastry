@@ -12,8 +12,13 @@ class Produk extends Model
 
     protected $fillable = ['nama_produk', 'harga', 'image', 'description'];
 
-    public function stock()
-    {
-        return $this->hasOne('App\Model\Stock');
-    }
+    // public function scopeSelectBox($query)
+    // {
+    // 	$return = array();
+    //     $data = $query->orderBy('id')->get()->toArray();
+    //     foreach ($data as $key => $value) {
+    //     	$return[$value['id']] = $value['nama_produk'];
+    //     }
+    //     return $return;
+    // }
 }

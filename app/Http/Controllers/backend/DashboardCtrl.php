@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Model\Produk;
-use App\Model\Stock;
-use App\Model\Blog;
+use App\Model\Testimoni;
+use App\Model\Resep;
 
 class DashboardCtrl extends Controller
 {
@@ -19,8 +19,11 @@ class DashboardCtrl extends Controller
      */
     public function index()
     {
-        $this->data['title'] = 'Dashboard';
-        $this->data['produk'] = Produk::count();
+        $this->data['title']            = 'Dashboard';
+        $this->data['produk']           = Produk::count();
+        $this->data['testimoni']        = Testimoni::count();
+        $this->data['resep']            = Resep::count();
+        // $this->data['testimonial']  = Testimonial::count();
 
         return view('backend.dashboard', $this->data);
     }

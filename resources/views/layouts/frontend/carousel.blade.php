@@ -6,9 +6,9 @@
     <div class="carousel-inner">
     <div class="carousel-item active">
         <img class="d-block w-100" src={{asset("images/slider-img-1.jpg")}} alt="First slide">
-        <div class="carousel-caption d-none d-md-block">
-        <h5 class="text-white">Caption Title</h5>
-        <p>Caption Subtitle</p>
+        <div class="carousel-caption">
+            <h4 class="text-white">Caption Title</h4>
+            <p>Caption Subtitle</p>
         </div>
     </div>
     <div class="carousel-item">

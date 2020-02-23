@@ -12,14 +12,14 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Edit Data Produk Omah Pastry</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Edit Testimonial Omah Pastry</h6>
         </div>
 
         <div>
             <form
                 enctype="multipart/form-data"
                 class="bg-white shadow-sm p-3"
-                action="{{route('produk.update', $produk->id)}}"
+                action="{{route('testimonial.update', $testimonials->id)}}"
                 method="POST">
 
                 @csrf
@@ -28,56 +28,44 @@
                     type="hidden"
                     value="PUT"
                     name="_method">
-
-                <label>Nama Produk <font style="inline-block" color="red">(*)</font></label>
+                
+                <label>Nama Testimonial <font style="inline-block" color="red">(*)</font></label>
                 <input
                     type="text"
-                    class="form-control {{$errors->first('nama_produk') ? "is-invalid" : ""}}"
-                    value="{{old('nama_produk') ? old('nama_produk') : $produk->nama_produk}}"
-                    name="nama_produk"
-                    placeholder="Masukkan Nama Produk">
+                    class="form-control {{$errors->first('nama_testi') ? "is-invalid" : ""}}"
+                    value="{{old('nama_testi') ? old('nama_testi') : $testimonials->nama_testi}}"
+                    name="nama_testi"
+                    placeholder="Masukkan Nama Testimonial">
                     <div class="invalid-feedback">
-                        {{$errors->first('nama_produk')}}
+                        {{$errors->first('nama_testi')}}
                     </div>
                 <br>
 
-                <label>Produk Image <font style="inline-block" color="red">(*)</font></label><br>
-                @if($produk->image)
+                <label>Testimonial Image <font style="inline-block" color="red">(*)</font></label><br>
+                @if($testimonials->image_testi)
                     <span>Current image</span><br>
-                    <img src="{{asset('storage/'. $produk->image)}}" width="120px">
+                    <img src="{{asset('storage/'. $testimonials->image_testi)}}" width="120px">
                     <br><br>
                 @endif
                 <input
                     type="file"
-                    class="form-control {{$errors->first('image') ? "is-invalid" : ""}}"
-                    name="image">
+                    class="form-control {{$errors->first('image_testi') ? "is-invalid" : ""}}"
+                    name="image_testi">
                     <small class="text-muted">Kosongkan jika tidak ingin mengubah gambar</small>
                     <div class="invalid-feedback">
-                        {{$errors->first('image')}}
+                        {{$errors->first('image_testi')}}
                     </div>
                 <br>
                 <br>
 
-                <label>Harga Produk <font style="inline-block" color="red">(*)</font></label>
-                <input
-                    type="text"
-                    class="form-control {{$errors->first('harga') ? "is-invalid" : ""}}"
-                    value="{{old('harga') ? old('harga') : $produk->harga}}"
-                    name="harga"
-                    placeholder="Masukkan Harga Produk">
-                    <div class="invalid-feedback">
-                        {{$errors->first('harga')}}
-                    </div>
-                <br>
-
-                <label>Deskripsi Produk <font style="inline-block" color="red">(*)</font></label>
+                <label>Deskripsi Testimonial <font style="inline-block" color="red">(*)</font></label>
                 <textarea
-                    class="form-control {{$errors->first('description') ? "is-invalid" : ""}}" 
-                    name="description" id="description">
-                    {{old('description') ? old('description') : $produk->description}}
+                    class="form-control {{$errors->first('deskripsi_testi') ? "is-invalid" : ""}}" 
+                    name="deskripsi_testi" id="deskripsi_testi">
+                    {{old('deskripsi_testi') ? old('deskripsi_testi') : $testimonials->deskripsi_testi}}
                 </textarea>
                     <div class="invalid-feedback">
-                        {{$errors->first('description')}}
+                        {{$errors->first('deskripsi_testi')}}
                     </div>
                 <br>
 
@@ -89,7 +77,7 @@
                             value="Update">
 
                         <a
-                            href="{{route('produk.index')}}"
+                            href="{{route('testimonial.index')}}"
                             type="button"
                             class="btn btn-warning"
                             value="Kembali"> Kembali
@@ -99,8 +87,4 @@
             </form>
         </div>
     </div>
-@endsection
-
-@section('scripts')
-    @include('backend.produk._scripts')
 @endsection
