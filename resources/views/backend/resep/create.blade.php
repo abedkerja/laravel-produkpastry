@@ -13,6 +13,9 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-primary">Tambah Data Resep</h6>
+            <a href="{{route('resep.index')}}" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm">
+                <i class="fas fa-arrow-left fa-sm text-white-50"></i> Ke Halaman Indeks Resep
+            </a>
         </div>
 
         <div>

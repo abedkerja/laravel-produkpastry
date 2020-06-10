@@ -1,5 +1,5 @@
 <!-- Footer -->
-@foreach($navbar as $navbar)
+@foreach($profiles as $navbar)
 <div id="our-services" class="py-5" style="background-color:#ffc02a">
     <div class="container">
         <div class="py-4">

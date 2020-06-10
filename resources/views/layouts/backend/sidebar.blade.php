@@ -8,7 +8,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Omah Pastry Admin</div>
         
             {{-- Hallo {{Auth::user()->username}}</div> --}}
         </a>
@@ -24,40 +24,89 @@
         </li>
 
         <!-- Divider -->
+        {{-- <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Manage Thumbnail
+        </div>
+
+        <!-- Nav Item - Profile Usaha -->
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-settings"></i>
+                <span>Manage Thumbnail</span>
+            </a>
+        </li> --}}
+
+        <!-- Divider -->
         <hr class="sidebar-divider">
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            Profile & Resep
+            Profile Omah Pastry
         </div>
 
         <!-- Nav Item - Profile Usaha -->
         <li class="nav-item">
             <a class="nav-link" href="{{route ('profile.index')}}">
                 <i class="fas fa-fw fa-user"></i>
-                <span>Profile Usaha</span></a>
-            </li>
-    
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-        <a class="nav-link" href="{{route ('resep.index')}}">
-            <i class="fas fa-fw fa-blog"></i>
-            <span>Resep</span></a>
+                <span>Profile Usaha</span>
+            </a>
         </li>
 
         <!-- Heading -->
         <div class="sidebar-heading">
-        Produk & Testimonial
+            Produk Omah Pastry
         </div>
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
         <a class="nav-link" href="{{route ('produk.index')}}">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="fas fa-fw fa-archive"></i>
             <span>Produk</span></a>
         </li>
+    
+        <div class="sidebar-heading">
+            Blog & Resep
+        </div>
 
-        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-blog"></i>
+            <span>Blog</span></a>
+        </li>
+
+        <!-- Nav Item - Resep -->
+        <li class="nav-item">
+        <a class="nav-link" href="{{route ('resep.index')}}">
+            <i class="fas fa-fw fa-clipboard-list"></i>
+            <span>Resep</span></a>
+        </li>
+
+        <div class="sidebar-heading">
+            Galeri
+        </div>
+
+        <li class="nav-item">
+        <a class="nav-link" href="{{route('galeri.index')}}">
+            <i class="fas fa-fw fa-image"></i>
+            <span>Galeri</span></a>
+        </li>
+
+        <div class="sidebar-heading">
+            Hubungi Kami & Testimonial
+        </div>
+
+        <!-- Nav Item - Hubungi Kami -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{route ('hubungi-kami.index')}}">
+                <i class="fas fa-fw fa-phone"></i>
+                <span>Hubungi Kami</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Testimonial -->
         <li class="nav-item">
         <a class="nav-link" href="{{route ('testimonial.index')}}">
             <i class="fas fa-fw fa-table"></i>

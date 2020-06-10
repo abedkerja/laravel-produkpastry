@@ -88,3 +88,7 @@
         </div>
     </div>
 @endsection
+
+@section('scripts')
+    @include('backend.testimonial._scripts')
+@endsection

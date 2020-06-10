@@ -81,59 +81,199 @@
                         {{$errors->first('nomor_hp')}}
                     </div>
                 <br>
-
-                <label>Nama Bank <font style="inline-block" color="red">(*)</font></label>
-                <input
-                    type="text"
-                    class="form-control {{$errors->first('nama_bank') ? "is-invalid" : ""}}"
-                    value="{{old('nama_bank') ? old('nama_bank') : $profile->nama_bank}}"
-                    name="nama_bank"
-                    placeholder="Masukkan Nama Bank">
-                    <div class="invalid-feedback">
-                        {{$errors->first('nama_bank')}}
+                
+                <h5><b>Akun Bank</b></h5>
+                <hr>
+                
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nama Bank Pertama</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nama_bank_1') ? "is-invalid" : ""}}"
+                            value="{{old('nama_bank_1') ? old('nama_bank_1') : $profile->nama_bank_1}}"
+                            name="nama_bank_1"
+                            placeholder="Masukkan Nama Bank Pertama">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nama_bank_1')}}
+                            </div>
+                        <br>
                     </div>
-                <br>
 
-                <label>Logo Bank <font style="inline-block" color="red">(*)</font></label><br>
-                @if($profile->logo_bank)
-                    <span>Current image</span><br>
-                    <img src="{{asset('storage/'. $profile->logo_bank)}}" width="120px">
-                    <br><br>
-                @endif
-                <input
-                    type="file"
-                    class="form-control {{$errors->first('logo_bank') ? "is-invalid" : ""}}"
-                    name="logo_bank">
-                    <small class="text-muted">Kosongkan jika tidak ingin mengubah gambar</small>
-                    <div class="invalid-feedback">
-                        {{$errors->first('logo_bank')}}
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nama Bank Kedua</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nama_bank_2') ? "is-invalid" : ""}}"
+                            value="{{old('nama_bank_2') ? old('nama_bank_2') : $profile->nama_bank_2}}"
+                            name="nama_bank_2"
+                            placeholder="Masukkan Nama Bank Kedua">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nama_bank_2')}}
+                            </div>
+                        <br>
                     </div>
-                <br>
-                <br>
 
-                <label>Nama Rekening <font style="inline-block" color="red">(*)</font></label>
-                <input
-                    type="text"
-                    class="form-control {{$errors->first('nama_rekening') ? "is-invalid" : ""}}"
-                    value="{{old('nama_rekening') ? old('nama_rekening') : $profile->nama_rekening}}"
-                    name="nama_rekening"
-                    placeholder="Masukkan Nama Pembuat Rekening">
-                    <div class="invalid-feedback">
-                        {{$errors->first('nama_rekening')}}
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nama Bank Ketiga</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nama_bank_3') ? "is-invalid" : ""}}"
+                            value="{{old('nama_bank_3') ? old('nama_bank_3') : $profile->nama_bank_3}}"
+                            name="nama_bank_3"
+                            placeholder="Masukkan Nama Bank Ketiga">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nama_bank_3')}}
+                            </div>
+                        <br>
                     </div>
-                <br>
+                </div>
 
-                <label>Nomor Rekening <font style="inline-block" color="red">(*)</font></label>
-                <input
-                    type="text"
-                    class="form-control {{$errors->first('nomor_rekening') ? "is-invalid" : ""}}"
-                    value="{{old('nomor_rekening') ? old('nomor_rekening') : $profile->nomor_rekening}}"
-                    name="nomor_rekening"
-                    placeholder="Masukkan Nomor Rekening">
-                    <div class="invalid-feedback">
-                        {{$errors->first('nomor_rekening')}}
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Logo Bank Pertama</label><br>
+                        @if($profile->logo_bank_1)
+                            <span>Current image</span><br>
+                            <img src="{{asset('storage/'. $profile->logo_bank_1)}}" width="120px">
+                            <br><br>
+                        @endif
+                        <input
+                            type="file"
+                            class="form-control {{$errors->first('logo_bank_1') ? "is-invalid" : ""}}"
+                            name="logo_bank_1">
+                            <small class="text-muted">Kosongkan jika tidak ingin mengubah gambar</small>
+                            <div class="invalid-feedback">
+                                {{$errors->first('logo_bank_1')}}
+                            </div>
+                        <br>
+                        <br>
                     </div>
-                <br>
+
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Logo Bank Kedua</label><br>
+                        @if($profile->logo_bank_2)
+                            <span>Current image</span><br>
+                            <img src="{{asset('storage/'. $profile->logo_bank_2)}}" width="120px">
+                            <br><br>
+                        @endif
+                        <input
+                            type="file"
+                            class="form-control {{$errors->first('logo_bank_2') ? "is-invalid" : ""}}"
+                            name="logo_bank_2">
+                            <small class="text-muted">Kosongkan jika tidak ingin mengubah gambar</small>
+                            <div class="invalid-feedback">
+                                {{$errors->first('logo_bank_2')}}
+                            </div>
+                        <br>
+                        <br>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Logo Bank Keiga</label><br>
+                        @if($profile->logo_bank_3)
+                            <span>Current image</span><br>
+                            <img src="{{asset('storage/'. $profile->logo_bank_3)}}" width="120px">
+                            <br><br>
+                        @endif
+                        <input
+                            type="file"
+                            class="form-control {{$errors->first('logo_bank_3') ? "is-invalid" : ""}}"
+                            name="logo_bank_3">
+                            <small class="text-muted">Kosongkan jika tidak ingin mengubah gambar</small>
+                            <div class="invalid-feedback">
+                                {{$errors->first('logo_bank_3')}}
+                            </div>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+
+
+                <h5><b>Akun Rekening</b></h5>
+                <hr>
+
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nama Pemilik Rekening Bank Pertama</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nama_rekening_bank_1') ? "is-invalid" : ""}}"
+                            value="{{old('nama_rekening_bank_1') ? old('nama_rekening_bank_1') : $profile->nama_rekening_bank_1}}"
+                            name="nama_rekening_bank_1"
+                            placeholder="Nama Pemilik Rekening Bank Pertama">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nama_rekening_bank_1')}}
+                            </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nama Pemilik Rekening Bank Kedua</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nama_rekening_bank_2') ? "is-invalid" : ""}}"
+                            value="{{old('nama_rekening_bank_2') ? old('nama_rekening_bank_2') : $profile->nama_rekening_bank_2}}"
+                            name="nama_rekening_bank_2"
+                            placeholder="Nama Pemilik Rekening Bank Kedua">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nama_rekening_bank_2')}}
+                            </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nama Pemilik Rekening Bank Ketiga</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nama_rekening_bank_3') ? "is-invalid" : ""}}"
+                            value="{{old('nama_rekening_bank_3') ? old('nama_rekening_bank_3') : $profile->nama_rekening_bank_3}}"
+                            name="nama_rekening_bank_3"
+                            placeholder="Nama Pemilik Rekening Bank Ketiga">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nama_rekening_bank_3')}}
+                            </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nomor Rekening Bank Pertama</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nomor_rekening_bank_1') ? "is-invalid" : ""}}"
+                            value="{{old('nomor_rekening_bank_1') ? old('nomor_rekening_bank_1') : $profile->nomor_rekening_bank_1}}"
+                            name="nomor_rekening_bank_1"
+                            placeholder="Nomor Rekening Bank Pertama">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nomor_rekening_bank_1')}}
+                            </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nomor Rekening Bank Kedua</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nomor_rekening_bank_2') ? "is-invalid" : ""}}"
+                            value="{{old('nomor_rekening_bank_2') ? old('nomor_rekening_bank_2') : $profile->nomor_rekening_bank_2}}"
+                            name="nomor_rekening_bank_2"
+                            placeholder="Nomor Rekening Bank Kedua">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nomor_rekening_bank_2')}}
+                            </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nomor Rekening Bank Ketiga</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nomor_rekening_bank_3') ? "is-invalid" : ""}}"
+                            value="{{old('nomor_rekening_bank_3') ? old('nomor_rekening_bank_3') : $profile->nomor_rekening_bank_3}}"
+                            name="nomor_rekening_bank_3"
+                            placeholder="Nomor Rekening Bank Ketiga">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nomor_rekening_bank_3')}}
+                            </div>
+                    </div>
+                </div>
+                <hr>
 
                 <label>Deskripsi Profile <font style="inline-block" color="red">(*)</font></label>
                 <textarea

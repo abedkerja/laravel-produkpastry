@@ -57,50 +57,175 @@
                     <div class="invalid-feedback">
                         {{$errors->first('nomor_hp')}}
                     </div>
-                <br>
-
-                <label>Nama Bank <font style="inline-block" color="red">(*)</font></label>
-                <input
-                    type="text"
-                    class="form-control {{$errors->first('nama_bank') ? "is-invalid" : ""}}"
-                    name="nama_bank"
-                    placeholder="Masukkan Nama Bank">
-                    <div class="invalid-feedback">
-                        {{$errors->first('nama_bank')}}
+                <br><br>
+                
+                <h5><b>Akun Bank</b></h5>
+                <hr>
+                
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nama Bank Pertama </label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nama_bank_1') ? "is-invalid" : ""}}"
+                            name="nama_bank_1"
+                            placeholder="Masukkan Nama Bank Pertama">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nama_bank_1')}}
+                            </div>
+                        <br>
                     </div>
-                <br>
 
-                <label>Logo Bank <font style="inline-block" color="red">(*)</font></label>
-                <input
-                    type="file"
-                    class="form-control {{$errors->first('logo_bank') ? "is-invalid" : ""}}"
-                    name="logo_bank">
-                    <div class="invalid-feedback">
-                        {{$errors->first('logo_bank')}}
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nama Bank Kedua </label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nama_bank_2') ? "is-invalid" : ""}}"
+                            name="nama_bank_2"
+                            placeholder="Masukkan Nama Bank Kedua">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nama_bank_2')}}
+                            </div>
+                        <br>
                     </div>
-                <br>
 
-                <label>Nama Pemilik Rekening <font style="inline-block" color="red">(*)</font></label>
-                <input
-                    type="text"
-                    class="form-control {{$errors->first('nama_rekening') ? "is-invalid" : ""}}"
-                    name="nama_rekening"
-                    placeholder="Masukkan Nama Pemilik Rekening">
-                    <div class="invalid-feedback">
-                        {{$errors->first('nama_rekening')}}
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nama Bank Ketiga </label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nama_bank_3') ? "is-invalid" : ""}}"
+                            name="nama_bank_3"
+                            placeholder="Masukkan Nama Bank Ketiga">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nama_bank_3')}}
+                            </div>
+                        <br>
                     </div>
-                <br>
+                </div>
 
-                <label>Nomor Rekening <font style="inline-block" color="red">(*)</font></label>
-                <input
-                    type="text"
-                    class="form-control {{$errors->first('nomor_rekening') ? "is-invalid" : ""}}"
-                    name="nomor_rekening"
-                    placeholder="Masukkan Nomor Rekening">
-                    <div class="invalid-feedback">
-                        {{$errors->first('nomor_rekening')}}
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Logo Bank Pertama</label>
+                        <input
+                            type="file"
+                            class="form-control {{$errors->first('logo_bank_1') ? "is-invalid" : ""}}"
+                            name="logo_bank_1">
+                            <div class="invalid-feedback">
+                                {{$errors->first('logo_bank_1')}}
+                            </div>
+                        <br>
                     </div>
-                <br>
+
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Logo Bank Kedua</label>
+                        <input
+                            type="file"
+                            class="form-control {{$errors->first('logo_bank_2') ? "is-invalid" : ""}}"
+                            name="logo_bank_2">
+                            <div class="invalid-feedback">
+                                {{$errors->first('logo_bank_2')}}
+                            </div>
+                        <br>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Logo Bank Ketiga</label>
+                        <input
+                            type="file"
+                            class="form-control {{$errors->first('logo_bank_3') ? "is-invalid" : ""}}"
+                            name="logo_bank_3">
+                            <div class="invalid-feedback">
+                                {{$errors->first('logo_bank_3')}}
+                            </div>
+                        <br>
+                    </div>
+                </div>
+                
+                <h5><b>Akun Rekening</b></h5>
+                <hr>
+
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nama Pemilik Rekening Bank 1</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nama_rekening_bank_1') ? "is-invalid" : ""}}"
+                            name="nama_rekening_bank_1"
+                            placeholder="Nama Pemilik Rekening Bank Pertama">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nama_rekening_bank_1')}}
+                            </div>
+                        <br>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nama Pemilik Rekening Bank 2</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nama_rekening_bank_2') ? "is-invalid" : ""}}"
+                            name="nama_rekening_bank_2"
+                            placeholder="Nama Pemilik Rekening Bank Kedua">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nama_rekening_bank_2')}}
+                            </div>
+                        <br>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nama Pemilik Rekening Bank 3</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nama_rekening_bank_3') ? "is-invalid" : ""}}"
+                            name="nama_rekening_bank_3"
+                            placeholder="Nama Pemilik Rekening Bank Ketiga">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nama_rekening_bank_3')}}
+                            </div>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nomor Rekening Bank 1</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nomor_rekening_bank_1') ? "is-invalid" : ""}}"
+                            name="nomor_rekening_bank_1"
+                            placeholder="Masukkan Nomor Rekening Pertama">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nomor_rekening_bank_1')}}
+                            </div>
+                        <br>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nomor Rekening Bank 2</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nomor_rekening_bank_2') ? "is-invalid" : ""}}"
+                            name="nomor_rekening_bank_2"
+                            placeholder="Masukkan Nomor Rekening Kedua">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nomor_rekening_bank_2')}}
+                            </div>
+                        <br>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 mb-4">
+                        <label>Nomor Rekening Bank 3</label>
+                        <input
+                            type="text"
+                            class="form-control {{$errors->first('nomor_rekening_bank_3') ? "is-invalid" : ""}}"
+                            name="nomor_rekening_bank_3"
+                            placeholder="Masukkan Nomor Rekening Bank Ketiga">
+                            <div class="invalid-feedback">
+                                {{$errors->first('nomor_rekening_bank_3')}}
+                            </div>
+                        <br>
+                    </div>
+                </div>
+                <hr>
 
                 <label>Deskripsi Profile <font style="inline-block" color="red">(*)</font></label>
                 <textarea

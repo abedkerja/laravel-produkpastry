@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Crypt;
+
+use App\Http\Requests\reqProduk;
 
 use App\Http\Controllers\Controller;
 use App\Model\Produk;
@@ -10,6 +14,8 @@ use Illuminate\Validation\Rule;
 
 use Yajra\DataTables\DataTables;
 use Yajra\DataTables\Html\Builder;
+
+use DB;
 
 class ProdukCtrl extends Controller
 {
@@ -60,18 +66,24 @@ class ProdukCtrl extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(reqProduk $request)
     {
-        \Validator::make($request->all(), [
-            "nama_produk"   => "required|min:3|max:25",
-            "image"         => "required",
-            "harga"         => "required|numeric|digits_between:4,12",
-            "description"   => "required|min:20|max:10000"
-        ])->validate();
-
-        $new_produk                 = new \App\Model\Produk;
+        $new_produk                 = new Produk();
         $new_produk->nama_produk    = $request->get('nama_produk');
+        //Nama Produk kita jadikan slug
+        $new_produk->slug_produk = Str::slug($request->get('nama_produk'));
 
+        // $encrypted = Crypt::encryptString($new_produk->slug_produk);
+        // $decrypted = Crypt::decryptString($encrypted);
+
+        // dd($encrypted);
+        // dd($decrypted);
+        
+        // echo "Hasil Enkripsi : " . $encrypted;
+		// echo "<br/>";
+		// echo "<br/>";
+		// echo "Hasil Dekripsi : " . $decrypted;
+        
         $image = $request->file('image');
 
         if ($image) {
@@ -95,7 +107,9 @@ class ProdukCtrl extends Controller
      */
     public function show($id)
     {
-        //
+        $tampilkan = Produk::where('slug_produk', $slug)->first();
+        dd($tampilkan);
+        return view('frontend.produk.detail')->with('tampilkan', $tampilkan);
     }
 
     /**
@@ -117,15 +131,15 @@ class ProdukCtrl extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(reqProduk $request, $id)
     {
-        \Validator::make($request->all(), [
-            "nama_produk"           => "required|min:3|max:100",
-            "harga"                 => "required|numeric",
-            "description"           => "required|min:20|max:1000"
-        ])->validate();
+        // \Validator::make($request->all(), [
+        //     "nama_produk"           => "required|min:3|max:100",
+        //     "harga"                 => "required|numeric",
+        //     "description"           => "required|min:20|max:1000"
+        // ])->validate();
 
-        $update_produk = \App\Model\Produk::findOrFail($id);
+        $update_produk = Produk::findOrFail($id);
 
         $update_produk->nama_produk = $request->get('nama_produk');
         $update_produk->harga = $request->get('harga');
@@ -141,7 +155,7 @@ class ProdukCtrl extends Controller
 
         $update_produk->save();
 
-        return redirect()->route('produk.index', $update_produk->id)->with('status', 'Data produk berhasil diubah');
+        return redirect()->route('produk.edit', $update_produk->id)->with('status', 'Data Produk berhasil diubah');
     }
 
     /**

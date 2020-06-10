@@ -81,13 +81,13 @@ class TestimonialCtrl extends Controller
             "deskripsi_testi"   => "required|min:20|max:10000"
         ])->validate();
 
-        $new_testi                      = new \App\Model\Testimoni;
+        $new_testi                      = new Testimoni();
         $new_testi->nama_testi          = $request->get('nama_testi');
 
         $image_testi = $request->file('image_testi');
 
         if ($image_testi) {
-            $image_path = $image_testi->store('image-testi', 'public');
+            $image_path = $image_testi->store('image-testi', 'public')->getClientOriginalExtension();;
 
             $new_testi->image_testi = $image_path;
         }
@@ -141,7 +141,7 @@ class TestimonialCtrl extends Controller
         $update_testi->deskripsi_testi    = $request->get('deskripsi_testi');
 
         if($request->file('image_testi')){
-            if ($update_resep->image_testi && file_exists(storage_path('app/public/' . $update_testi->image_testi))) {
+            if ($update_testi->image_testi && file_exists(storage_path('app/public/' . $update_testi->image_testi))) {
                 \Storage::delete('public/' . $update_testi->image_testi);
             }
             $file = $request->file('image_testi')->store('image-testi', 'public');
@@ -163,6 +163,6 @@ class TestimonialCtrl extends Controller
     {
         $testimonials = Testimoni::findOrFail($id);
         $testimonials->delete();
-        return redirect()->route('testimonial.index')->with('status', 'Data stock berhasil dihapus');
+        return redirect()->route('testimonial.index')->with('status', 'Data Testimoni Berhasil Dihapus');
     }
 }

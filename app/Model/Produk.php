@@ -2,15 +2,26 @@
 
 namespace App\Model;
 
+use Redis;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
-// use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Produk extends Model
 {
     protected $table = 'tabel_produk';
 
-    protected $fillable = ['nama_produk', 'harga', 'image', 'description'];
+    protected $fillable = ['nama_produk', 'slug_produk', 'harga', 'image', 'description'];
+
+    public function visits()
+    {
+        return visits($this);
+    }
+
+    // public function setSlugAttribute($value)
+    // {
+    //     $this->attributes['nama_produk']  = $value;
+    //     $this->attributes['slug']   = str_slug($value);
+    // }
 
     // public function scopeSelectBox($query)
     // {

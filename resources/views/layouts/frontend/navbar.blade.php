@@ -1,4 +1,4 @@
-@foreach($navbar as $navbar)
+@foreach($profiles as $navbar)
     <nav class="navbar navbar-expand-md navbar-dark bg-secondary mb-0">
         <a class="navbar-brand" href="{{url('/')}}">
             <img src="{{asset('storage/'.$navbar->logo_usaha)}}" class="mr-2" height="40">

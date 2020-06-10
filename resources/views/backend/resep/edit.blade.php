@@ -100,7 +100,7 @@
                         <a
                             href="{{route('resep.index')}}"
                             type="button"
-                            class="btn btn-purple"
+                            class="btn btn-warning"
                             value="Kembali"> Kembali
                         </a>
                     </div>

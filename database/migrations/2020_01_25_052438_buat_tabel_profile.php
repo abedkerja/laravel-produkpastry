@@ -19,10 +19,21 @@ class BuatTabelProfile extends Migration
             $table->string('logo_usaha')->comment('Hanya path imagenya saja');
             $table->string('alamat');
             $table->string('nomor_hp');
-            $table->string('nama_bank');
-            $table->string('logo_bank');
-            $table->string('nama_rekening');
-            $table->string('nomor_rekening');
+
+            $table->string('nama_bank_1')->nullable();
+            $table->string('logo_bank_1')->nullable();
+            $table->string('nama_bank_2')->nullable();
+            $table->string('logo_bank_2')->nullable();
+            $table->string('nama_bank_3')->nullable();
+            $table->string('logo_bank_3')->nullable();
+
+            $table->string('nama_rekening_bank_1')->nullable();
+            $table->string('nomor_rekening_bank_1')->nullable();
+            $table->string('nama_rekening_bank_2')->nullable();
+            $table->string('nomor_rekening_bank_2')->nullable();
+            $table->string('nama_rekening_bank_3')->nullable();
+            $table->string('nomor_rekening_bank_3')->nullable();
+
             $table->text('deskripsi_profile');
             $table->timestamps();
         });

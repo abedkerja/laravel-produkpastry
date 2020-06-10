@@ -9,6 +9,9 @@ use App\Http\Controllers\Controller;
 use App\Model\Produk;
 use App\Model\Testimoni;
 use App\Model\Resep;
+use App\Model\Profile;
+use App\Model\Galeri;
+use App\Model\Blog;
 
 class DashboardCtrl extends Controller
 {
@@ -23,7 +26,9 @@ class DashboardCtrl extends Controller
         $this->data['produk']           = Produk::count();
         $this->data['testimoni']        = Testimoni::count();
         $this->data['resep']            = Resep::count();
-        // $this->data['testimonial']  = Testimonial::count();
+        $this->data['profile']          = Profile::count();
+        $this->data['galeri']           = Galeri::count();
+        $this->data['blog']             = Blog::count();
 
         return view('backend.dashboard', $this->data);
     }

@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Model;
+
+use Redis;
+use Illuminate\Support\Facades\DB;
+// use Illuminate\Database\Eloquent\Model;
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -23,9 +29,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
+        route::bind('slug', function($slug){
+            return Model\Produk::where('slug_produk', $slug)->first();
+        });
     }
 
     /**

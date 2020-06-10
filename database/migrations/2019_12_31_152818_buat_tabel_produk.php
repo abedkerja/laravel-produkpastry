@@ -15,7 +15,7 @@ class BuatTabelProduk extends Migration
     {
         Schema::create('tabel_produk', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_produk');
+            $table->string('nama_produk')->comment('Hanya menampilkan path imagenya saja');
             $table->string('image');
             $table->string('harga');
             $table->text('description');
