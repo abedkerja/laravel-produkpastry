@@ -65,16 +65,16 @@
                         <div class="uk-card-body">
                             <article class="uk-article">
                                 <h6 class="uk-article-title">
-                                    <a class="uk-link-reset" href="">{{ $item->judul_resep }}</a>
+                                    <a class="uk-link-reset" href="{{url('resep/read', $item->slug_resep)}}">{{ $item->judul_resep }}</a>
                                 </h6>
-                                <p class="uk-article-meta">Oleh <a href="#">{{ $item->created_by }}</a> pada {{$item->created_at->format('d-m-Y h:m:s')}} </p>
+                                <p class="uk-article-meta">Oleh {{ $item->created_by }} pada {{$item->created_at->format('d-m-Y h:m:s')}} </p>
                                 <span class="uk-text-lighter" style="color: #000;">
                                     {!! $item->deskripsi_resep !!}
                                 </span>
                                 <br><hr>
                                 <div class="uk-grid-small uk-grid" uk-grid="">
                                     <div class="uk-first-column">
-                                        <a class="uk-button uk-button-text" href="{{url('resep', $item->id)}}"><strong>Selengkapnya</strong></a>
+                                        <a class="uk-button uk-button-text" href="{{url('resep/read', $item->slug_resep)}}"><strong>Selengkapnya</strong></a>
                                     </div>
                                 </div>
                             </article>

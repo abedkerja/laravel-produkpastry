@@ -46,7 +46,7 @@ class GaleriController extends Controller
         $html = $htmlBuilder
         ->addColumn(['data'=>'judul_galeri', 'name'=>'judul_galeri', 'title'=>'Judul Gambar'])
         ->addColumn(['data'=>'image_galeri', 'name'=>'image_galeri', 'title'=>'Gambar'])
-        ->addColumn(['data'=>'views', 'name'=>'views', 'title'=>'Jumlah Dilihat'])
+        // ->addColumn(['data'=>'views', 'name'=>'views', 'title'=>'Jumlah Dilihat'])
         ->addColumn(['data'=>'status', 'name'=>'status', 'title'=>'Status Publish'])
         ->addColumn(['data'=>'deskripsi_galeri', 'name'=>'deskripsi_galeri', 'title'=>'Deskripsi Galeri'])
         ->addColumn(['data' => 'action', 'name'=>'action','title' =>'Aksi', 'orderable'=>false, 'searchable'=>false]);
@@ -84,19 +84,22 @@ class GaleriController extends Controller
         $image_galeri = $request->file('image_galeri');
 
         if ($image_galeri) {
-            // $image_path = $image_galeri->store('image-galeri', 'public');
+            $image_path = $image_galeri->store('image-galeri', 'public');
 
-            $image_path = Storage::putFileAs('image-galeri', new File('/public'));
+            // $image_path = \Storage::putFileAs('image-galeri', new File('/public'));
 
             $new_galeri->image_galeri = $image_path;
         }
 
-        // dd($image_galeri);
-
-        // dd($image_path);
-
-        $new_galeri->deskripsi_galeri         = $request->get('deskripsi_galeri');
+        $new_galeri->deskripsi_galeri     = $request->get('deskripsi_galeri');
+        $new_galeri->status               = $request->get('save_action');
         $new_galeri->save();
+
+        if ($request->get('save_action') == 'PUBLISH'){
+            return redirect()->route('galeri.create')->with('status', 'Galeri Berhasil disimpan dan dipublikasikan');
+        } else  {
+            return redirect()->route('galeri.create')->with('status', 'Galeri disimpan sebagai Draft');
+        }  
 
         return redirect()->route('galeri.index')->with('status', 'Galeri Berhasil ditambahkan');
     }
@@ -150,6 +153,8 @@ class GaleriController extends Controller
             $file = $request->file('image_galeri')->store('image-galeri', 'public');
             $update_galeri->image_galeri = $file;
         }
+
+        $update_galeri->status   = $request->get('status');
 
         $update_galeri->save();
 

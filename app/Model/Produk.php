@@ -17,11 +17,11 @@ class Produk extends Model
         return visits($this);
     }
 
-    // public function setSlugAttribute($value)
-    // {
-    //     $this->attributes['nama_produk']  = $value;
-    //     $this->attributes['slug']   = str_slug($value);
-    // }
+    public function setNamaProdukAttribute($value)
+    {
+        $this->attributes['nama_produk']  = $value;
+        $this->attributes['slug_produk']   = str_slug($value);
+    }
 
     // public function scopeSelectBox($query)
     // {

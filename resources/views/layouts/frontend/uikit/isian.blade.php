@@ -34,7 +34,7 @@
             function onClick(e) {
                 e.preventDefault();
                 grecaptcha.ready(function() {
-                    grecaptcha.execute('6Lfmj_4UAAAAANV9hanIhhcdvRQYpI_uGqlL_TFo', {action: 'submit'}).then(function(token) {
+                    grecaptcha.execute('6LfIlKMZAAAAADyM16yzcglpu2SetkxKxQ8e8eaF', {action: 'submit'}).then(function(token) {
                         // Coba coba aja
                         // alert
                     });

@@ -66,7 +66,7 @@
         <div class="uk-container">
             {{-- uk-lightbox="animation: scale; target: img; delay: 100; repeat: true" --}}
             <div class="uk-child-width-1-2@s uk-child-width-1-2@m uk-child-width-1-2@l uk-text-justify uk-grid" uk-grid>
-                @foreach ($produkdetail as $produkdetail)
+                {{-- @foreach ($produkdetail as $produkdetail) --}}
                 <div class="uk-grid-item-match uk-first-column">
                     <div class="uk-background-default uk-flex uk-flex-center uk-flex-middle">
                         <a class="uk-inline uk-panel uk-link-muted uk-text-center" style="text-decoration:none" href="{{asset('storage/'.$produkdetail->image)}}" data-caption="{{$produkdetail->nama_produk}}">
@@ -92,9 +92,9 @@
                             <span uk-icon="icon: star; ratio: 1"></span>
                             {{-- <span class="uk-icon uk-icon-image" style="background-image: url('https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Star_Gold_Dark-512.png');"></span> --}}
                             &nbsp;  
-                            @foreach ($produkvisits as $item)
-                                <span class="uk-text-bold"> {{ visits($item)->count() }}x</span> Dilihat </span>
-                            @endforeach
+                            {{-- @foreach ($produkvisits as $item) --}}
+                                <span class="uk-text-bold"> {{ visits($produkdetail)->count() }}x</span> Dilihat </span>
+                            {{-- @endforeach --}}
 
                         <hr>
 
@@ -173,7 +173,7 @@
                                         <span class="uk-text-small uk-text-bold uk-text-light uk-text-muted"> WhatsApp </span>
                                     </div>
                                     <div>
-                                        <a href="https://web.whatsapp.com/send?text=Bagikan%20Link%20Ini {{$produkdetail->nama_produk}} {{url('produk', $produkdetail->slug_produk)}}" target="_blank" class="uk-icon-link uk-margin-small-top" uk-icon="icon: whatsapp; ratio: 3.5"></a>
+                                        <a href="https://api.whatsapp.com/send?text=Bagikan%20Link%20Ini {{$produkdetail->slug_produk}} {{url('produk/read', $produkdetail->slug_produk)}}" title="Share on Whatsapp" rel="external"  target="_blank" class="uk-icon-link uk-margin-small-top" uk-icon="icon: whatsapp; ratio: 3.5"></a>
                                         {{-- <a href="https://web.whatsapp.com/send?text={{url('produk', $produkdetail->id)}}" data-action="share/whatsapp/share" onClick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on whatsapp">WA</a> --}}
                                     </div>
                                 </div>
@@ -187,7 +187,7 @@
                                     <div>
                                         {{-- <a href="whatsapp://send?text=Hello%20World!">Hello, world!</a> --}}
                                         {{-- <a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share">Share via Whatsapp</a> --}}
-                                        <a href="whatsapp://send?text={{url('produk')}}" target="_blank" class="uk-icon-link uk-margin-small-top" uk-icon="icon: facebook; ratio: 3.5"></a>
+                                        <a href="https://www.facebook.com/share.php?u={{url('produk/read', $produkdetail->slug_produk)}}" target="_blank" title="Share on Facebook" rel="external" class="uk-icon-link uk-margin-small-top" uk-icon="icon: facebook; ratio: 3.5"></a>
                                     </div>
                                 </div>
 
@@ -195,17 +195,19 @@
 
                                 <div class="uk-width-auto">
                                     <div class="uk-first-column">
-                                        <span class="uk-text-small uk-text-bold uk-text-light uk-text-muted"> Instagram </span>
+                                        <span class="uk-text-small uk-text-bold uk-text-light uk-text-muted"> Mail </span>
                                     </div>
                                     <div>
-                                        <a href="" class="uk-icon-link uk-margin-small-top" uk-icon="icon: instagram; ratio: 3.5"></a>
-                                        {{-- <a class="uk-icon-link uk-icon uk-link-reset" data-uk-tooltip="title: Selengkapnya" data-uk-icon="icon: chevron-right; ratio: 0.8" href={{url('produk', $produkdetail->id)}}>Selengkapnya</a> --}}
+                                        {{-- <a href="https://twitter.com/share?url=https://dumetschool.com&text=Simple%20Share%20Buttons&hashtags=simplesharebuttons" target="_blank">
+                                            <img src="https://www.kursuswebsite.org/wp-content/uploads/2017/03/twitter.png" alt="Twitter" />
+                                        </a> --}}
+                                        <a href="mailto:?Subject={{$produkdetail->nama_produk}}&Body={{$produkdetail->nama_produk}}! {{url('produk/read', $produkdetail->slug_produk)}}" class="uk-icon-link uk-margin-small-top" uk-icon="icon: mail; ratio: 3.5"></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                    {{-- @endforeach --}}
                 </div>
 
                 {{-- Tampilan TAB --}}
@@ -255,7 +257,6 @@
                                                 </div>
                                                 </div>
                                                 @endforeach
-                                            
                                         </div>
                                     </div>
                                 </div> --}}
@@ -284,14 +285,14 @@
                                                     <div class="uk-card-footer">
                                                         <div class="uk-grid uk-grid-small uk-grid-divider uk-flex uk-flex-middle" data-uk-grid="">
                                                             <div class="uk-width-expand uk-text-small uk-first-column">
-                                                                <a class="uk-icon-link uk-icon uk-link-reset" data-uk-tooltip="title: Selengkapnya" data-uk-icon="icon: chevron-right; ratio: 0.8" href={{url('produk', $item->id)}}>Selengkapnya</a>
+                                                                <a class="uk-icon-link uk-icon uk-link-reset" data-uk-tooltip="title: Selengkapnya" data-uk-icon="icon: chevron-right; ratio: 0.8" href={{url('produk/read', $item->slug_produk)}}>Selengkapnya</a>
                                                             </div>
-                                                            <div class="uk-width-auto uk-text-right">
-                                                                {{-- <a href="#" data-uk-tooltip="title: Twitter" class="uk-icon-link uk-icon" data-uk-icon="icon:twitter; ratio: 0.8" title="" aria-expanded="false"></a> --}}
+                                                            {{-- <div class="uk-width-auto uk-text-right">
+                                                                <a href="#" data-uk-tooltip="title: Twitter" class="uk-icon-link uk-icon" data-uk-icon="icon:twitter; ratio: 0.8" title="" aria-expanded="false"></a>
                                                                 <a href="https://www.instagram.com/omah_pastry.id/" target='_blank' data-uk-tooltip="title: Instagram" class="uk-icon-link uk-icon" data-uk-icon="icon:instagram; ratio: 0.8" title="" aria-expanded="false"></a>
                                                                 <a href="https://bit.ly/3bFoNT1" target="_blank" data-uk-tooltip="title: Whatsapp" class="uk-icon-link uk-icon" data-uk-icon="icon:whatsapp; ratio: 0.8" title="" aria-expanded="false"></a>
                                                                 <a href="https://www.facebook.com/Omah-Pastry-1410708402353240/" target='_blank' data-uk-tooltip="title: Facebook" class="uk-icon-link uk-icon" data-uk-icon="icon:facebook; ratio: 0.8" title="" aria-expanded="false"></a>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -302,7 +303,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, sed do eiusmod.</li>
+                            {{-- <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, sed do eiusmod.</li> --}}
                         </ul>
                     </div>
                 </div>

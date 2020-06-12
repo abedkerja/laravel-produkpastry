@@ -44,7 +44,7 @@
     </div>
     </div>
 
-    {{-- Section 3 :  Section Produk..--}}
+    {{-- Section 2 :  Section Produk..--}}
     <div class="uk-section uk-section-default uk-margin-small uk-margin-small-bottom uk-margin">
         <div class="uk-container">
             <h3 class="uk-text-center uk-text-bold"><span>Produk Kami</span></h3>
@@ -54,7 +54,7 @@
                 @foreach ($produks as $produk)
                 <div class="uk-first-column" style="transform: translateY(0px);">
                     <div>
-                        <a class="uk-inline uk-panel uk-link-muted uk-text-center" style="text-decoration:none" href="{{asset('storage/'.$produk->image)}}" data-caption="{{$produk->nama_produk}}">
+                        <a class="uk-inline uk-panel uk-link-muted uk-text-center" style="text-decoration:none" href="{{url('produk/read', $produk->slug_produk)}}" data-caption="{{$produk->nama_produk}}">
                             <figure>
                                 <img src="{{asset('storage/'.$produk->image)}}" width="400" alt="{{$produk->nama_produk}}">
                                 <figcaption class="uk-margin-small-top uk-text-light uk-h4">{{$produk->nama_produk}}</figcaption>
@@ -72,7 +72,9 @@
         </div>
     </div>
 
-    {{-- Section 4 : Section testimonial --}}
+    {{-- Section 3 dan Section 4 : Section Resep dan Section Blog --}}
+
+    {{-- Section 5 : Section testimonial --}}
     <div class="uk-section uk-section-muted">
         <div class="uk-container uk-background-muted">
             <div class="uk-container">

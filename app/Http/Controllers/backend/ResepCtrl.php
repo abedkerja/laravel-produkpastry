@@ -164,7 +164,7 @@ class ResepCtrl extends Controller
 
         $update_resep->save();
 
-        return redirect()->route('resep.index', $update_resep->id)->with('status', 'Data Resep berhasil diubah');
+        return redirect()->route('resep.edit', $update_resep->id)->with('status', 'Data Resep berhasil diubah');
     }
 
     /**

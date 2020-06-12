@@ -70,8 +70,8 @@ class ProdukCtrl extends Controller
     {
         $new_produk                 = new Produk();
         $new_produk->nama_produk    = $request->get('nama_produk');
-        //Nama Produk kita jadikan slug
-        $new_produk->slug_produk = Str::slug($request->get('nama_produk'));
+        // Nama Produk kita jadikan slug
+        // $new_produk->slug_produk = Str::slug($request->get('nama_produk'));
 
         // $encrypted = Crypt::encryptString($new_produk->slug_produk);
         // $decrypted = Crypt::decryptString($encrypted);

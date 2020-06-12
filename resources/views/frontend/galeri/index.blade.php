@@ -64,11 +64,13 @@
 
 <div class="uk-margin-medium uk-margin-large-bottom uk-margin">
     <div class="uk-container">
-        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid" uk-grid="">
-            @foreach ($galeries as $galeri)
+        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid" uk-grid="" uk-lightbox="animation: scale">
+            @foreach ($galeri as $galeri)
             <div class="uk-first-column">
                 <div class="uk-height-1-1">
-                    <img src="{{asset('storage/'.$galeri->image_galeri)}}" width="746" height="498">
+                    <a href="{{asset('storage/'.$galeri->image_galeri)}}">
+                        <img src="{{asset('storage/'.$galeri->image_galeri)}}" width="746" height="498" alt="{{$galeri->judul_galeri}}">
+                    </a>
                 </div>
             </div>
             @endforeach

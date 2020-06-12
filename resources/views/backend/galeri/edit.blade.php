@@ -58,6 +58,15 @@
                 <br>
                 <br>
 
+                <label for="">Status</label>
+                <select name="status" id="status" class="form-control">
+                    <option {{$galeries->status == 'PUBLISH' ? 'selected' : ''}}
+                    value="PUBLISH">PUBLISH</option>
+                    <option {{$galeries->status == 'DRAFT' ? 'selected' : ''}}
+                        value="DRAFT">DRAFT</option>
+                </select>
+                <br>
+
                 <label>Deskripsi Galeri <font style="inline-block" color="red">(*)</font></label>
                 <textarea
                     class="form-control {{$errors->first('deskripsi_galeri') ? "is-invalid" : ""}}" 

@@ -13,13 +13,15 @@
 
 Route::get('/', ['as' => 'home', 'uses' => 'DepanController@index']);
 Route::get('/produk', 'DepanController@produklist')->name('produk');
-Route::get('/produk/{slug}', 'DepanController@produkdetail');
+// Route::get('/produk/{id}', 'DepanController@produkdetail');
+Route::get('/produk/read/{slug}', 'DepanController@produkdetail');
 Route::get('/profile', 'DepanController@profile')->name('profile');
 Route::get('/resep', 'DepanController@reseplist')->name('resep');
-Route::get('/resep/{id}', 'DepanController@resepdetail');
+Route::get('/resep/read/{slug}', 'DepanController@resepdetail');
 Route::get('/testimonial', 'DepanController@testimonial')->name('testimonial');
 Route::get('/galeri', 'DepanController@galeri')->name('galeri');
 Route::get('/blog', 'DepanController@blog')->name('blog');
+Route::get('/blog/read/{slug}', 'DepanController@blogdetail');
 Route::get('/hubungi-kami', 'DepanController@hubungi_kami')->name('hubungi-kami');
 Route::post('/hubungi-kami', 'DepanController@hubungikami_store')->name('hubungi-kami.simpan') ;
 

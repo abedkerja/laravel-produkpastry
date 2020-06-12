@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ModifikasiProdukTabel extends Migration
+class ModifikasiResepTabel extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class ModifikasiProdukTabel extends Migration
      */
     public function up()
     {
-        Schema::table('tabel_produk', function (Blueprint $table) {
-            $table->string('slug_produk')->after('nama_produk');
+        Schema::table('tabel_resep', function (Blueprint $table) {
+            $table->string('slug_resep')->after('judul_resep');
         });
     }
 
@@ -25,6 +25,6 @@ class ModifikasiProdukTabel extends Migration
      */
     public function down()
     {
-        $table->dropColumn('slug_produk');
+        Schema::dropColumn('slug_resep');
     }
 }

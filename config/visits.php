@@ -11,7 +11,7 @@ return [
     |
     */
     'engine' => 'redis',
-    'connection' => 'visits',
+    'connection' => 'laravel-visits',
 
 
     /*

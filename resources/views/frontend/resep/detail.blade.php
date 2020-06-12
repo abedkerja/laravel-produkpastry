@@ -69,9 +69,9 @@
 
                     <img class="uk-margin-large-top" src="{{asset('storage/'.$resepdetail->image_resep)}}" alt="">
 
-                    <h1 class="uk-article-title uk-text-bolder"><a class="uk-link-reset" href="">{{$resepdetail->judul_resep}}</a></h1>
+                    <h1 class="uk-article-title uk-text-bolder"><a class="uk-link-reset" href="#">{{$resepdetail->judul_resep}}</a></h1>
 
-                    <p class="uk-article-meta">Oleh <a href="#">{{ $resepdetail->created_by }}</a> pada {{$resepdetail->created_at->format('d-m-Y')}} </p>
+                    <p class="uk-article-meta">Oleh {{ $resepdetail->created_by }} pada {{$resepdetail->created_at->format('d-m-Y')}} dilihat {{ visits($resepdetail)->count() }} kali </p>
 
                     <span class="uk-text-lead uk-text-light">
                         {!! $resepdetail->deskripsi_resep !!}
@@ -79,7 +79,10 @@
                     
                     <div class="uk-grid-small uk-grid uk-margin-large" uk-grid="">
                         <div class="uk-first-column">
-                            <a class="uk-button uk-button-text" href="#">Share Button</a>
+                            {{-- <a class="uk-button uk-button-text" href="#">Share Button</a> --}}
+                            <a href="https://api.whatsapp.com/send?text=Bagikan%20Link%20Ini {{$resepdetail->slug_resep}} {{url('resep/read', $resepdetail->slug_resep)}}" title="Share on Whatsapp" rel="external"  target="_blank" class="uk-icon-link uk-margin-small-top" uk-icon="icon: whatsapp; ratio: 1.0"></a>
+                            <a href="https://www.facebook.com/share.php?u={{url('resep/read', $resepdetail->slug_resep)}}" target="_blank" title="Share on Facebook" rel="external" class="uk-icon-link uk-margin-small-top" uk-icon="icon: facebook; ratio: 1.0"></a>
+                            <a href="mailto:?Subject={{$resepdetail->judul_resep}}&Body={{$resepdetail->judul_resep}}! {{url('resep/read', $resepdetail->slug_resep)}}" class="uk-icon-link uk-margin-small-top" uk-icon="icon: mail; ratio: 1.0"></a>
                         </div>
                     </div>
 

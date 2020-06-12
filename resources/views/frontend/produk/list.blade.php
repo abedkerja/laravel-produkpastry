@@ -81,7 +81,7 @@
                 @foreach ($produklist as $produk)
                 <div class="uk-first-column" style="transform: translateY(0px);">
                     <div class="uk-panel">
-                        <a class="uk-inline uk-panel uk-link-muted uk-text-center" style="text-decoration:none" href="{{url('produk', $produk->slug_produk)}}">
+                        <a class="uk-inline uk-panel uk-link-muted uk-text-center" style="text-decoration:none" href="{{url('produk/read', $produk->slug_produk)}}">
                             {{-- <img src="{{asset('storage/'.$produk->image)}}" alt="Image Produk"> --}}
                             <figure>
                                 <img src="{{asset('storage/'.$produk->image)}}" width="400" alt="{{$produk->nama_produk}}">

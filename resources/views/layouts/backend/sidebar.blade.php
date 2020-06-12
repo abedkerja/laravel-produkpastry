@@ -72,7 +72,7 @@
         </div>
 
         <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route ('blog.index')}}">
             <i class="fas fa-fw fa-blog"></i>
             <span>Blog</span></a>
         </li>

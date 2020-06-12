@@ -17,11 +17,11 @@ class DepanController extends Controller
 {
     public function __construct()
     {
-        $this->data['produks']              = Model\Produk::orderBy('id')->limit(12)->get();
-        $this->data['profiles']             = Model\Profile::orderBy('id')->get();
-        $this->data['testimonials']  	    = Model\Testimoni::orderBy('id')->get();
-        $this->data['reseps']               = Model\Resep::orderBy('id')->get();
-        $this->data['blogs']                = Model\Blog::orderBy('id')->get();
+        $this->data['produks']               = Model\Produk::orderBy('id')->limit(12)->get();
+        $this->data['profiles']              = Model\Profile::orderBy('id')->get();
+        $this->data['testimonials']  	     = Model\Testimoni::orderBy('id')->get();
+        $this->data['reseps']                = Model\Resep::orderBy('id')->get();
+        $this->data['blogs']                 = Model\Blog::orderBy('id')->get();
         $this->data['galeries']              = Model\Galeri::orderBy('id')->get();
         $this->data['hubungi-kami']          = Model\HubungiKami::orderBy('id')->get();
     }
@@ -39,27 +39,39 @@ class DepanController extends Controller
         return view('frontend.produk.list', $this->data);
     }
 
-    public function produkdetail($id)
+    public function produkdetail($slug)
     {
         $this->data['title'] = 'Detail Produk';
 
-        $this->data['produkdetail'] = Model\Produk::find($id);
+        $this->data['produkdetail'] = Model\Produk::where('slug_produk', $slug)->first();
         
-        // $this->data['produkvisits'] = Model\Produk::find($id);
-        $this->data['sub_visits'] = Model\Produk::where('id', $id)->first();
-        $this->data['sub_visits']->visits()->increment();
-        $this->data['sub_visits']->visits()->count();
+        // $produkvisits = Model\Produk::find($id);
+        // $this->data['produkvisits'] = Model\Produk::where('id', $id)->first();
+        // dd($produkvisits);
+        $this->data['produkdetail']->visits()->increment();
+        $this->data['produkdetail']->visits()->count();
 
-        $this->data['produklain'] = Model\Produk::where('id', '<>' , $id)->get();
+        $this->data['produklain'] = Model\Produk::where('slug_produk', '<>' , $slug)->limit(4)->get();
 
         return view('frontend.produk.detail', $this->data);
     }
 
-    // public function showSlug($id, $slug)
+    // public function show($slugproduk)
     // {
-    //     $tampilkan = Model\Produk::where('slug_produk', $slug)->first();
-    //     dd($tampilkan);
-    //     return view('frontend.produk.detail')->with('tampilkan', $tampilkan);
+    //     $this->data['title'] = 'Detail Produk';
+
+    //     $this->data['produkdetail'] = Model\Produk::where('slug_produk', $slugproduk)->first();
+    //     dd($this->data['produkdetail']);
+
+    //     $produkvisits = Model\Produk::find($slugproduk);
+    //     $this->data['produkvisits'] = Model\Produk::where('slug_produk', $slugproduk)->first();
+    //     $this->data['produkvisits']->visits()->increment();
+    //     $this->data['produkvisits']->visits()->count();
+    //     dd($produkvisits);
+    //     $this->data['produklain'] = Model\Produk::where('id', '<>' , $id)->get();
+
+    //     $this->data['tampilkan'] = Model\Produk::where('slug_produk', $slugproduk)->first();
+    //     return view('frontend.produk.detail')->with($this->data);
     // }
 
     public function profile()
@@ -73,15 +85,26 @@ class DepanController extends Controller
     public function reseplist()
     {
         $this->data['title']    = 'Daftar Resep';
-        $this->data['resep']    = Model\Resep::where('status', 'PUBLISH')->orderBy('id','asc')->get();
+        $this->data['resep']    =  Model\Resep::where('status', 'PUBLISH')->orderBy('id','asc')->get();
 
         return view('frontend.resep.list', $this->data);
     }
 
-    public function resepdetail($id)
+    public function resepdetail($slug)
     {
         $this->data['title'] = 'Detail Resep';
-        $this->data['resepdetail'] = Model\Resep::find($id);
+
+        $this->data['resepdetail'] = Model\Resep::where('slug_resep', $slug)->first();
+        
+        // $produkvisits = Model\Produk::find($id);
+        // $this->data['produkvisits'] = Model\Produk::where('id', $id)->first();
+        // dd($produkvisits);
+        $this->data['resepdetail']->visits()->increment();
+        $this->data['resepdetail']->visits()->count();
+
+        $this->data['reseplain'] = Model\Resep::where('slug_resep', '<>' , $slug)->limit(4)->get();
+
+        // $this->data['resepdetail'] = Model\Resep::find($id);
         
         return view('frontend.resep.detail', $this->data);
     }
@@ -95,6 +118,8 @@ class DepanController extends Controller
     public function galeri()
     {
         $this->data['title']    = 'Daftar Galeri';
+        $this->data['galeri']    = Model\Galeri::where('status', 'PUBLISH')->orderBy('id','asc')->get();
+
         return view('frontend.galeri.index', $this->data);
     }
 
