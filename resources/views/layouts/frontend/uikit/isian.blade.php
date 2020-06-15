@@ -30,7 +30,7 @@
             'action' => 'homepage'
         ]) !!}
 
-        <script>
+        {{-- <script>
             function onClick(e) {
                 e.preventDefault();
                 grecaptcha.ready(function() {
@@ -40,7 +40,7 @@
                     });
                 });
             }
-        </script>
+        </script> --}}
         {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js" 
                 integrity="sha256-v789mr/zBbgR53mfydCI78CSAF+9+nRqu+JRfs1UPg0=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js" 

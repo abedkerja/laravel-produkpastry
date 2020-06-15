@@ -50,7 +50,7 @@
             <h3 class="uk-text-center uk-text-bold"><span>Produk Kami</span></h3>
             <div class="uk-divider-icon uk-margin-medium"></div>
 
-            <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-grid uk-flex-top uk-flex-wrap-top uk-margin" uk-grid="masonry: true" uk-lightbox="animation: scale" style="height: 700px;">
+            <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-grid uk-flex-top uk-flex-wrap-top uk-margin" uk-grid="masonry: true" style="height: 700px;">
                 @foreach ($produks as $produk)
                 <div class="uk-first-column" style="transform: translateY(0px);">
                     <div>
@@ -73,10 +73,58 @@
     </div>
 
     {{-- Section 3 dan Section 4 : Section Resep dan Section Blog --}}
+    <div class="uk-section uk-section-muted uk-margin-small uk-margin-small-bottom uk-margin">
+        <div class="uk-container">
+            <h3 class="uk-text-center uk-text-bold"><span>Resep dan Blog</span></h3>
+            <div class="uk-divider-icon uk-margin-medium"></div>
 
-    {{-- Section 5 : Section testimonial --}}
-    <div class="uk-section uk-section-muted">
-        <div class="uk-container uk-background-muted">
+            <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-grid uk-flex-top uk-flex-wrap-top uk-margin" uk-grid="masonry: true" style="height: 700px;">
+                @foreach ($reseps as $resep)
+                <div class="uk-first-column" style="transform: translateY(0px);">
+                    <div>
+                        <a class="uk-inline uk-panel uk-link-muted uk-text-center" style="text-decoration:none" href="{{url('resep/read', $resep->slug_resep)}}" data-caption="{{$resep->judul_resep}}">
+                            <figure>
+                                <img src="{{asset('storage/'.$resep->image_resep)}}" width="400" alt="{{$resep->judul_resep}}">
+                                <figcaption class="uk-margin-small-top uk-text-light uk-h4">{{$resep->judul_resep}}</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <div class="uk-container uk-container-medium uk-margin-medium uk-margin">
+                <div class="uk-flex uk-flex-center uk-flex-middle">
+                    <a class="uk-button uk-button-primary" href="{{url('/resep')}}">Lihat Selengkapnya &raquo;</a>
+                </div>
+            </div>
+
+            <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-grid uk-flex-top uk-flex-wrap-top uk-margin" uk-grid="masonry: true" style="height: 700px;">
+                @foreach ($blogs as $blog)
+                <div class="uk-first-column" style="transform: translateY(0px);">
+                    <div>
+                        <a class="uk-inline uk-panel uk-link-muted uk-text-center" style="text-decoration:none" href="{{url('blog/read', $blog->slug_blog)}}" data-caption="{{$blog->judul_blog}}">
+                            <figure>
+                                <img src="{{asset('storage/'.$blog->image_blog)}}" width="400" alt="{{$blog->judul_blog}}">
+                                <figcaption class="uk-margin-small-top uk-text-light uk-h4">{{$blog->judul_blog}}</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <div class="uk-container uk-container-medium uk-margin-medium uk-margin">
+                <div class="uk-flex uk-flex-center uk-flex-middle">
+                    <a class="uk-button uk-button-primary" href="{{url('/blog')}}">Lihat Selengkapnya &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Section 5 : Section Galeri --}}
+
+    {{-- Section 6 : Section testimonial --}}
+    <div class="uk-section uk-section-default">
+        <div class="uk-container uk-background-default">
             <div class="uk-container">
                 <h3 class="uk-text-center uk-text-bold"><span>Testimonial</span></h3>
                 <div class="uk-divider-icon uk-margin-medium"></div>

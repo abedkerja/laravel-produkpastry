@@ -25,6 +25,7 @@ class BuatTabelBlog extends Migration
             $table->string('created_by');
             $table->integer('updated_by')->nullable();
             $table->integer('deleted_by')->nullable();
+            $table->timestamps();
         });
     }
 

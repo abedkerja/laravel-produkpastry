@@ -25,18 +25,17 @@ class reqProduk extends FormRequest
     public function rules(Request $request)
     {
         return [
-            'nama_produk' => 'required|min:3|max:25',
+            'nama_produk' => 'required|min:3|max:200',
             'harga' => 'required|numeric|digits_between:3,12',
             'description' => 'required|min:20|max:10000',
             'image' => 'required|mimes:jpg,jpeg,png|max:4000',
-            
         ];
     }
 
     public function messages(){
         return [
-            'nama_produk.min' => 'Nama Produk minimal mengandung 3 karakter',
-            'nama_produk.max' => 'Nama Produk maksimal mengandung 25 karakter',
+            'nama_produk.min' => 'Nama Produk minimal 3 karakter',
+            'nama_produk.max' => 'Nama Produk maksimal 200 karakter',
             'nama_produk.required' => 'Nama Produk harus diisi',
             'harga.required' => 'Harga harus diisi',
             'harga.numeric' => 'Harga harus dalam bentuk angka',

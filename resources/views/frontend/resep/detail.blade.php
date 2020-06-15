@@ -16,7 +16,7 @@
                                     <li><a href="{{route('profile')}}">Profile Kami</a></li>
                                     <li><a href="{{route('produk')}}">Produk</a></li>
 
-                                    {{-- <li><a href="{{route('blog')}}">Blog</a></li> --}}
+                                    <li><a href="{{route('blog')}}">Blog</a></li>
                                     <li class="uk-active">
                                         <a href="{{route('resep')}}">Resep</a>
                                     </li>
@@ -32,7 +32,7 @@
                                         <li><a href="{{url('/')}}">Beranda</a></li>
                                         <li><a href="{{route('profile')}}">Profile Kami</a></li>
                                         <li><a href="{{route('produk')}}">Produk</a></li>
-                                        {{-- <li><a href="{{route('blog')}}">Blog</a></li> --}}
+                                        <li><a href="{{route('blog')}}">Blog</a></li>
                                         <li><a href="{{route('resep')}}">Resep</a></li>
                                         <li><a href="{{route('galeri')}}">Galeri</a></li>
                                         <li><a href="{{route('testimonial')}}">Testimonial</a></li>
@@ -69,7 +69,7 @@
 
                     <img class="uk-margin-large-top" src="{{asset('storage/'.$resepdetail->image_resep)}}" alt="">
 
-                    <h1 class="uk-article-title uk-text-bolder"><a class="uk-link-reset" href="#">{{$resepdetail->judul_resep}}</a></h1>
+                    <h1 class="uk-article-title uk-text-bolder"><span class="uk-link-reset">{{$resepdetail->judul_resep}}</span></h1>
 
                     <p class="uk-article-meta">Oleh {{ $resepdetail->created_by }} pada {{$resepdetail->created_at->format('d-m-Y')}} dilihat {{ visits($resepdetail)->count() }} kali </p>
 

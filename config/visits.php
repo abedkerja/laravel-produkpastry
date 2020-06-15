@@ -23,6 +23,8 @@ return [
     |
     */
     'periods' => [
+        'minute',
+        'hour',
         'day',
         'week',
         'month',

@@ -13,9 +13,15 @@ class ModifikasiGaleriTabel extends Migration
      */
     public function up()
     {
-        Schema::table('tabel_galeri', function (Blueprint $table) {
-            $table->string('slug_galeri')->after('judul_galeri');
-        });
+        if (Schema::hasTable('tabel_galeri')) {
+            Schema::table('tabel_galeri', function (Blueprint $table) {
+                $table->string('slug_galeri')->after('judul_galeri');
+            });
+        }
+
+        // Schema::table('tabel_galeri', function (Blueprint $table) {
+        //     $table->string('slug_galeri')->after('judul_galeri');
+        // });
     }
 
     /**
@@ -25,6 +31,8 @@ class ModifikasiGaleriTabel extends Migration
      */
     public function down()
     {
-        Schema::dropColumn('slug_galeri');
+        Schema::table('tabel_galeri', function (Blueprint $table) {
+            //
+        });
     }
 }

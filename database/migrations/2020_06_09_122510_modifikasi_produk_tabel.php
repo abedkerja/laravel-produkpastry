@@ -13,9 +13,15 @@ class ModifikasiProdukTabel extends Migration
      */
     public function up()
     {
-        Schema::table('tabel_produk', function (Blueprint $table) {
-            $table->string('slug_produk')->after('nama_produk');
-        });
+        if (Schema::hasTable('tabel_produk')) {
+            Schema::table('tabel_produk', function (Blueprint $table) {
+                $table->string('slug_produk')->after('nama_produk');
+            });
+        }
+
+        // Schema::table('tabel_produk', function (Blueprint $table) {
+        //     $table->string('slug_produk')->after('nama_produk');
+        // });
     }
 
     /**
@@ -25,6 +31,8 @@ class ModifikasiProdukTabel extends Migration
      */
     public function down()
     {
-        $table->dropColumn('slug_produk');
+        Schema::table('tabel_produk', function (Blueprint $table) {
+            //
+        });
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\reqProfile;
 use App\Http\Controllers\Controller;
 use App\Model\Profile;
 
@@ -65,15 +66,15 @@ class ProfileUsaha extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(reqProfile $request)
     {
-        \Validator::make($request->all(), [
-            "nama_usaha"            => "required|min:3|max:25",
-            "logo_usaha"            => "required|mimes:jpg,jpeg,png|max:2000",
-            "alamat"                => "required|min:3|max:250",
-            "nomor_hp"              => "required|numeric|min:10",
-            "deskripsi_profile"     => "required|min:20|max:10000"
-        ])->validate();
+        // \Validator::make($request->all(), [
+        //     "nama_usaha"            => "required|min:3|max:25",
+        //     "logo_usaha"            => "required|mimes:jpg,jpeg,png|max:2000",
+        //     "alamat"                => "required|min:3|max:250",
+        //     "nomor_hp"              => "required|numeric|min:10",
+        //     "deskripsi_profile"     => "required|min:20|max:10000"
+        // ])->validate();
 
         $new_profile                 = new \App\Model\Profile;
         $new_profile->nama_usaha     = $request->get('nama_usaha');

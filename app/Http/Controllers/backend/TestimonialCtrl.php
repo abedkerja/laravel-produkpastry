@@ -5,8 +5,9 @@ namespace App\Http\Controllers\backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\reqTestimonial;
 use App\Model\Testimoni;
-use App\Model\Produk;
+// use App\Model\Produk;
 
 use Illuminate\Validation\Rule;
 use Yajra\DataTables\DataTables;
@@ -73,13 +74,13 @@ class TestimonialCtrl extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(reqTesti $request)
     {
-        \Validator::make($request->all(), [
-            "nama_testi"        => 'required',
-            'image_testi'       => 'required',
-            "deskripsi_testi"   => "required|min:20|max:10000"
-        ])->validate();
+        // \Validator::make($request->all(), [
+        //     "nama_testi"        => 'required',
+        //     'image_testi'       => 'required',
+        //     "deskripsi_testi"   => "required|min:20|max:10000"
+        // ])->validate();
 
         $new_testi                      = new Testimoni();
         $new_testi->nama_testi          = $request->get('nama_testi');

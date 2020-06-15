@@ -102,7 +102,7 @@ class DepanController extends Controller
         $this->data['resepdetail']->visits()->increment();
         $this->data['resepdetail']->visits()->count();
 
-        $this->data['reseplain'] = Model\Resep::where('slug_resep', '<>' , $slug)->limit(4)->get();
+        // $this->data['reseplain'] = Model\Resep::where('slug_resep', '<>' , $slug)->limit(4)->get();
 
         // $this->data['resepdetail'] = Model\Resep::find($id);
         
@@ -112,7 +112,22 @@ class DepanController extends Controller
     public function blog()
     {
         $this->data['title']    = 'Daftar Blog';
+        $this->data['blog']    =  Model\Blog::where('status', 'PUBLISH')->orderBy('id','asc')->get();
         return view('frontend.blog.index', $this->data);
+    }
+
+    public function blogdetail($slug)
+    {
+        $this->data['title'] = 'Detail Blog';
+
+        $this->data['blogdetail'] = Model\Blog::where('slug_blog', $slug)->first();
+        
+        $this->data['blogdetail']->visits()->increment();
+        $this->data['blogdetail']->visits()->count();
+
+        // $this->data['bloglain'] = Model\Blog::where('slug_blog', '<>' , $slug)->limit(4)->get();
+
+        return view('frontend.blog.detail', $this->data);
     }
 
     public function galeri()

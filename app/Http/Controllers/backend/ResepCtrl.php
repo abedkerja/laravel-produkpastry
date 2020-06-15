@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\reqResep;
 use App\Http\Controllers\Controller;
 use App\Model\Resep;
 use Illuminate\Validation\Rule;
@@ -71,14 +71,14 @@ class ResepCtrl extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(reqResep $request)
     {
-        \Validator::make($request->all(), [
-            "judul_resep"        => "required|min:3|max:1000",
-            "image_resep"        => "required",
-            "author"            => "required",
-            "deskripsi_resep"    => "required|min:20|max:10000"
-        ])->validate();
+        // \Validator::make($request->all(), [
+        //     "judul_resep"        => "required|min:3|max:1000",
+        //     "image_resep"        => "required",
+        //     "author"            => "required",
+        //     "deskripsi_resep"    => "required|min:20|max:10000"
+        // ])->validate();
 
         $new_resep                 = new \App\Model\Resep;
         $new_resep->judul_resep    = $request->get('judul_resep');

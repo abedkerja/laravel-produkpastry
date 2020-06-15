@@ -13,9 +13,15 @@ class ModifikasiBlogTabel extends Migration
      */
     public function up()
     {
-        Schema::table('tabel_blog', function (Blueprint $table) {
-            $table->string('slug_blog')->after('judul_blog');
-        });
+        if (Schema::hasTable('tabel_blog')) {
+            Schema::table('tabel_blog', function (Blueprint $table) {
+                $table->string('slug_blog')->after('judul_blog');
+            });
+        }
+
+        // Schema::table('tabel_blog', function (Blueprint $table) {
+        //     $table->string('slug_blog')->after('judul_blog');
+        // });
     }
 
     /**
@@ -25,6 +31,8 @@ class ModifikasiBlogTabel extends Migration
      */
     public function down()
     {
-        Schema::dropColumn('slug_blog');
+        Schema::table('tabel_blog', function (Blueprint $table) {
+            //
+        });
     }
 }

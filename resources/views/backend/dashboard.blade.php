@@ -135,13 +135,13 @@
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-light shadow h-100 py-2">
                 <div class="card-body">
-                    <a href="#" class="d-block" style="text-decoration: none">
+                    <a href="{{route('hubungi-kami.index')}}" class="d-block" style="text-decoration: none">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-gray-400 text-uppercase mb-1">Hubungi Kami</div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">#</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$hubungikami}}</div>
                                 </div>
                             </div>
                         </div>

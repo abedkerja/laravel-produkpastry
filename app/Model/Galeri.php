@@ -3,7 +3,6 @@
 namespace App\Model;
 
 use Redis;
-
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 

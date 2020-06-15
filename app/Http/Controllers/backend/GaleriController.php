@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\reqGaleri;
 
 use App\Model\Galeri;
 
@@ -70,15 +71,15 @@ class GaleriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(reqGaleri $request)
     {
-        \Validator::make($request->all(), [
-            "judul_galeri"        => 'required',
-            'image_galeri'       => "required|mimes:jpg,jpeg,png|max:4000",
-            "deskripsi_galeri"   => "required|min:20|max:10000"
-        ])->validate();
+        // \Validator::make($request->all(), [
+        //     "judul_galeri"        => 'required',
+        //     'image_galeri'       => "required|mimes:jpg,jpeg,png|max:4000",
+        //     "deskripsi_galeri"   => "required|min:20|max:10000"
+        // ])->validate();
 
-        $new_galeri                             = new Galeri();
+        $new_galeri                             = new \App\Model\Galeri;
         $new_galeri->judul_galeri               = $request->get('judul_galeri');
 
         $image_galeri = $request->file('image_galeri');

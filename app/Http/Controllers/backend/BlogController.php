@@ -3,10 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Crypt;
-
-// use App\Http\Requests\reqProduk;
+use App\Http\Requests\reqBlog;
 
 use App\Http\Controllers\Controller;
 use App\Model\Blog;
@@ -14,8 +11,6 @@ use Illuminate\Validation\Rule;
 
 use Yajra\DataTables\DataTables;
 use Yajra\DataTables\Html\Builder;
-
-use DB;
 
 class BlogController extends Controller
 {
@@ -66,17 +61,9 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(reqBlog $request)
     {
-        \Validator::make($request->all(), [
-            "judul_blog"        => "required|min:3|max:1000",
-            "image_blog"        => "required",
-            "author"            => "required",
-            "created_by"        => "required",
-            "deskripsi_blog"    => "required|min:20|max:10000"
-        ])->validate();
-
-        $new_blog                 = new Blog();
+        $new_blog                 = new \App\Model\Blog;
         $new_blog->judul_blog    = $request->get('judul_blog');
         
         $image_blog = $request->file('image_blog');
@@ -90,6 +77,7 @@ class BlogController extends Controller
         $new_blog->author          = $request->get('author');
         $new_blog->created_by          = $request->get('created_by');
         $new_blog->deskripsi_blog    = $request->get('deskripsi_blog');
+        $new_blog->save();
 
         if ($request->get('save_action') == 'PUBLISH'){
             return redirect()->route('blog.create')->with('status', 'Blog Berhasil disimpan dan dipublikasikan');
@@ -97,7 +85,6 @@ class BlogController extends Controller
             return redirect()->route('blog.create')->with('status', 'Blog disimpan sebagai Draft');
         }  
 
-        $new_blog->save();
         return redirect()->route('blog.index')->with('status', 'Blog Berhasil ditambahkan');
     }
 

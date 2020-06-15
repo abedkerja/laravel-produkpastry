@@ -13,9 +13,15 @@ class ModifikasiResepTabel extends Migration
      */
     public function up()
     {
-        Schema::table('tabel_resep', function (Blueprint $table) {
-            $table->string('slug_resep')->after('judul_resep');
-        });
+        if (Schema::hasTable('tabel_resep')) {
+            Schema::table('tabel_resep', function (Blueprint $table) {
+                $table->string('slug_resep')->after('judul_resep');
+            });
+        }
+
+        // Schema::table('tabel_resep', function (Blueprint $table) {
+        //     $table->string('slug_resep')->after('judul_resep');
+        // });
     }
 
     /**
@@ -25,6 +31,8 @@ class ModifikasiResepTabel extends Migration
      */
     public function down()
     {
-        Schema::dropColumn('slug_resep');
+        Schema::table('tabel_resep', function (Blueprint $table) {
+            //
+        });
     }
 }

@@ -1,9 +1,21 @@
 @extends('layouts.backend.main')
 
 @section('content')
+    @if(session('status'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{session('status')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+    @endif
+
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-sm-flex align-items-center justify-content-between">
             <h6 class="m-0 font-weight-bold text-primary">Tambah Galeri Omah Pastry</h6>
+            <a href="{{route('galeri.index')}}" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm">
+                <i class="fas fa-arrow-left fa-sm text-white-50"></i> Ke Halaman Indeks Galeri
+            </a>
         </div>
 
         <div>
@@ -49,17 +61,17 @@
 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-8">
-                        <input
-                            type="submit"
+                        <button
                             class="btn btn-primary"
-                            value="Simpan">
+                            name="save_action"
+                            value="PUBLISH"> Publish
+                        </button>
 
-                        <a
-                            href="{{route('galeri.index')}}"
-                            type="button"
-                            class="btn btn-warning"
-                            value="Kembali"> Batal
-                        </a>
+                        <button
+                            class="btn btn-info"
+                            name="save_action"
+                            value="DRAFT"> Save As Draft
+                        </button>
                     </div>
                 </div>
             </form>

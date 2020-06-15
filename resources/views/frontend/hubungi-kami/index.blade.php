@@ -18,7 +18,7 @@
 
                                     <li><a href="{{route('produk')}}">Produk</a></li>
 
-                                    {{-- <li><a href="{{route('blog')}}">Blog</a></li> --}}
+                                    <li><a href="{{route('blog')}}">Blog</a></li>
 
                                     <li><a href="{{route('resep')}}">Resep</a></li>
 
@@ -39,7 +39,7 @@
                                         <li><a href="{{url('/')}}">Beranda</a></li>
                                         <li><a href="{{route('profile')}}">Profile Kami</a></li>
                                         <li><a href="{{route('produk')}}">Produk</a></li>
-                                        {{-- <li><a href="{{route('blog')}}">Blog</a></li> --}}
+                                        <li><a href="{{route('blog')}}">Blog</a></li>
                                         <li><a href="{{route('resep')}}">Resep</a></li>
                                         <li><a href="{{route('galeri')}}">Galeri</a></li>
                                         <li><a href="{{route('testimonial')}}">Testimonial</a></li>

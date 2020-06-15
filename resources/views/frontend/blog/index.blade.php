@@ -52,9 +52,37 @@
 @endforeach
 
 @section('content')
-    <div class="uk-section uk-section-default uk-margin-small uk-margin-small-bottom uk-margin">
+    <div class="uk-section uk-section-default uk-margin-small uk-margin">
         <div class="uk-container">
-            HALAMAN {{$title}} <br>
+            
+            <div class="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-3@l uk-grid-match" uk-grid>
+                @foreach ($blog as $item)
+                <div class="uk-first-column">
+                    <div class="uk-card uk-card-default uk-card-hover">
+                        <div class="uk-card-media-top">
+                            <img src="{{asset('storage/'.$item->image_blog)}}" alt="">
+                        </div>
+                        <div class="uk-card-body">
+                            <article class="uk-article">
+                                <h6 class="uk-article-title">
+                                    <a class="uk-link-reset" href="{{url('blog/read', $item->slug_blog)}}">{{ $item->judul_blog }}</a>
+                                </h6>
+                                <p class="uk-article-meta">Oleh {{ $item->created_by }} pada {{$item->created_at->format('d-m-Y h:m:s')}} </p>
+                                <span class="uk-text-lighter" style="color: #000;">
+                                    {!! $item->deskripsi_blog !!}
+                                </span>
+                                <br><hr>
+                                <div class="uk-grid-small uk-grid" uk-grid="">
+                                    <div class="uk-first-column">
+                                        <a class="uk-button uk-button-text" href="{{url('blog/read', $item->slug_blog)}}"><strong>Selengkapnya</strong></a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection

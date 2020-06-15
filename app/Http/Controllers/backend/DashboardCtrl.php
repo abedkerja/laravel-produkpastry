@@ -12,6 +12,7 @@ use App\Model\Resep;
 use App\Model\Profile;
 use App\Model\Galeri;
 use App\Model\Blog;
+use App\Model\HubungiKami;
 
 class DashboardCtrl extends Controller
 {
@@ -29,6 +30,12 @@ class DashboardCtrl extends Controller
         $this->data['profile']          = Profile::count();
         $this->data['galeri']           = Galeri::count();
         $this->data['blog']             = Blog::count();
+        $this->data['hubungikami']      = HubungiKami::count();
+
+        // $this->data['VisitsProduk']     = visits('App\Model\Produk')->countries();
+        $this->data['VisitsProduk']        = visits('App\Model\Produk')->period('day')->count();
+        // dd($this->data['VisitsProduk']);
+
 
         return view('backend.dashboard', $this->data);
     }

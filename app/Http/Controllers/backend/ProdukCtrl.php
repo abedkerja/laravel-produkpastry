@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\backend;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Crypt;
+// use Illuminate\Support\Str;
+// use Illuminate\Support\Facades\Crypt;
 
 use App\Http\Requests\reqProduk;
 
 use App\Http\Controllers\Controller;
 use App\Model\Produk;
-use Illuminate\Validation\Rule;
 
+use Illuminate\Validation\Rule;
 use Yajra\DataTables\DataTables;
 use Yajra\DataTables\Html\Builder;
 
@@ -131,13 +131,13 @@ class ProdukCtrl extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(reqProduk $request, $id)
+    public function update(Request $request, $id)
     {
-        // \Validator::make($request->all(), [
-        //     "nama_produk"           => "required|min:3|max:100",
-        //     "harga"                 => "required|numeric",
-        //     "description"           => "required|min:20|max:1000"
-        // ])->validate();
+        \Validator::make($request->all(), [
+            "nama_produk"           => "required|min:3|max:100",
+            "harga"                 => "required|numeric",
+            "description"           => "required|min:20|max:1000"
+        ])->validate();
 
         $update_produk = Produk::findOrFail($id);
 
