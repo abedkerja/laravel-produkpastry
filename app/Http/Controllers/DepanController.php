@@ -56,24 +56,6 @@ class DepanController extends Controller
         return view('frontend.produk.detail', $this->data);
     }
 
-    // public function show($slugproduk)
-    // {
-    //     $this->data['title'] = 'Detail Produk';
-
-    //     $this->data['produkdetail'] = Model\Produk::where('slug_produk', $slugproduk)->first();
-    //     dd($this->data['produkdetail']);
-
-    //     $produkvisits = Model\Produk::find($slugproduk);
-    //     $this->data['produkvisits'] = Model\Produk::where('slug_produk', $slugproduk)->first();
-    //     $this->data['produkvisits']->visits()->increment();
-    //     $this->data['produkvisits']->visits()->count();
-    //     dd($produkvisits);
-    //     $this->data['produklain'] = Model\Produk::where('id', '<>' , $id)->get();
-
-    //     $this->data['tampilkan'] = Model\Produk::where('slug_produk', $slugproduk)->first();
-    //     return view('frontend.produk.detail')->with($this->data);
-    // }
-
     public function profile()
     {
         $this->data['title']    = 'Profile Kami';
@@ -133,7 +115,11 @@ class DepanController extends Controller
     public function galeri()
     {
         $this->data['title']    = 'Daftar Galeri';
+
         $this->data['galeri']    = Model\Galeri::where('status', 'PUBLISH')->orderBy('id','asc')->get();
+        
+        // $this->data['galeri']->visits()->increment();
+        // $this->data['galeri']->visits()->count();
 
         return view('frontend.galeri.index', $this->data);
     }

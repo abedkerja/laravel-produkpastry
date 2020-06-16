@@ -175,8 +175,8 @@
     </div>
     <!-- Content Row -->
     <div class="row">
-        <div class="col-lg-12 m-6 s-3">
-            <div class="card shadow mb-4">
+        <div class="col-xl-12 col-md-12 mb-4">
+            <div class="card shadow mb-3">
                 <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Selamat Datang {{Auth::user()->username}}</h6>
                 </div>
@@ -188,4 +188,156 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-xl-12 col-md-12 mb-4">
+            <div class="card shadow mb-3">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Pengunjung Web Per Hari</h6>
+                </div>
+                
+                <div class="card-body">
+                    <canvas id="chartDay"></canvas>
+                    {{-- <hr> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-12 col-md-12 mb-4">
+            <div class="card shadow mb-3">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Pengunjung Web Per Minggu</h6>
+                </div>
+                
+                <div class="card-body">
+                    <canvas id="chartWeek"></canvas>
+                    {{-- <hr> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-12 col-md-12 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Pengunjung Web Per Bulan</h6>
+                </div>
+                
+                <div class="card-body">
+                    <canvas id="chartMonth"></canvas>
+                    {{-- <hr> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('scripts')
+    <script>
+        $(function() {
+            var ctxday = document.getElementById('chartDay').getContext('2d');
+            var ctxweek = document.getElementById('chartWeek').getContext('2d');
+            var ctxmonth = document.getElementById('chartMonth').getContext('2d');
+
+            var chart = new Chart(ctxday, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: {
+                    labels: ['Produk', 'Resep', 'Blog', 'Galeri' ],
+                    datasets: [{
+                        label: 'Pengunjung Halaman Per Hari',
+                        backgroundColor: 'rgba(78, 115, 223, 1)',
+                        borderColor: 'rgba(78, 115, 223, 1)',
+                        data: [ {{$VisitsDayProduk}} , {{$VisitsDayResep}} , {{$VisitsDayBlog}}, {{$VisitsDayGaleri}} ]
+                    }]
+                },
+
+                // Configuration options go here
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            var chartweek = new Chart(ctxweek, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: {
+                    labels: ['Produk', 'Resep', 'Blog', 'Galeri' ],
+                    datasets: [{
+                        label: 'Pengunjung Halaman Per Minggu',
+                        backgroundColor: 'rgba(78, 115, 223, 1)',
+                        borderColor: 'rgba(78, 115, 223, 1)',
+                        data: [ {{$VisitsWeekProduk}} , {{$VisitsWeekResep}} , {{$VisitsWeekBlog}}, {{$VisitsWeekGaleri}} ]
+                    }]
+                },
+
+                // Configuration options go here
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [{
+                            stacked: true,
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+
+            var chartmonth = new Chart(ctxmonth, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: {
+                    labels: ['Produk', 'Resep', 'Blog', 'Galeri' ],
+                    datasets: [{
+                        label: 'Pengunjung Halaman Per Bulan',
+                        backgroundColor: 'rgba(78, 115, 223, 1)',
+                        borderColor: 'rgba(78, 115, 223, 1)',
+                        // backgroundColor: [
+                        //     'rgba(78, 115, 223, 1)',
+                        //     'rgb(54, 185, 204)',
+                        //     'rgb(231, 74, 59)',
+                        //     'rgb(133, 135, 150)'
+                        // ],
+                        // borderColor: [
+                        //     'rgba(78, 115, 223, 1)',
+                        //     'rgb(54, 185, 204)',
+                        //     'rgb(231, 74, 59)',
+                        //     'rgb(133, 135, 150)'
+                        // ],
+                        data: [ {{$VisitsMonthProduk}} , {{$VisitsMonthResep}} , {{$VisitsMonthBlog}}, {{$VisitsMonthGaleri}} ]
+                    }]
+                },
+
+                // Configuration options go here
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        });
+    </script>
 @endsection

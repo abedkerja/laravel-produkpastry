@@ -74,7 +74,7 @@ class TestimonialCtrl extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(reqTesti $request)
+    public function store(reqTestimonial $request)
     {
         // \Validator::make($request->all(), [
         //     "nama_testi"        => 'required',
@@ -88,7 +88,7 @@ class TestimonialCtrl extends Controller
         $image_testi = $request->file('image_testi');
 
         if ($image_testi) {
-            $image_path = $image_testi->store('image-testi', 'public')->getClientOriginalExtension();;
+            $image_path = $image_testi->store('image-testi', 'public');
 
             $new_testi->image_testi = $image_path;
         }

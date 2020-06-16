@@ -69,7 +69,7 @@
             <div class="uk-first-column">
                 <div class="uk-height-1-1">
                     <a href="{{asset('storage/'.$galeri->image_galeri)}}">
-                        <img src="{{asset('storage/'.$galeri->image_galeri)}}" width="746" height="498" alt="{{$galeri->judul_galeri}}">
+                        <img src="{{asset('storage/'.$galeri->image_galeri)}}" width="746" height="498" alt="{{$galeri->judul_galeri}} ">
                     </a>
                 </div>
             </div>

@@ -121,14 +121,48 @@
     </div>
 
     {{-- Section 5 : Section Galeri --}}
-
-    {{-- Section 6 : Section testimonial --}}
     <div class="uk-section uk-section-default">
         <div class="uk-container uk-background-default">
             <div class="uk-container">
+                <h3 class="uk-text-center uk-text-bold"><span>Galeri</span></h3>
+                <div class="uk-margin-medium"></div>
+                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active">
+
+                    <ul class="uk-slider-items uk-grid">
+                        @foreach ($galeries as $galeri)
+                            <li class="uk-width-1-4">
+                                <div class="uk-panel">
+                                    <img src="{{asset('storage/'.$galeri->image_galeri)}}" alt="" style="height: 300px">
+                                    <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                                        <h3 class="uk-margin-remove">{{$galeri->judul_galeri}}</h3>
+                                        <p class="uk-margin-remove">{!! $galeri->deskripsi_galeri !!}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+                
+                </div>
+            </div>
+
+            {{-- <div class="uk-container uk-container-medium uk-margin-medium uk-margin">
+                <div class="uk-flex uk-flex-center uk-flex-middle">
+                    <a class="uk-button uk-button-primary" href="{{url('/testimonial')}}">Lihat Selengkapnya &raquo;</a>
+                </div>
+            </div> --}}
+        </div>
+    </div>
+
+    {{-- Section 6 : Section testimonial --}}
+    <div class="uk-section uk-section-muted">
+        <div class="uk-container uk-background-muted">
+            <div class="uk-container">
                 <h3 class="uk-text-center uk-text-bold"><span>Testimonial</span></h3>
                 <div class="uk-divider-icon uk-margin-medium"></div>
-                <div data-uk-slider="velocity: 3" class="uk-slider">
+                <div data-uk-slider="velocity: 0.5" class="uk-slider">
 
                     <div class="uk-position-relative">
                         <div class="uk-slider-container">
@@ -145,7 +179,7 @@
                                                 <a class="uk-link-reset" href="#">{{$testimoni->nama_testi}}</a>
                                                 </h3>
                                                 <span class="uk-article-meta">Pada {{$testimoni->updated_at->format('d-m-Y h:m:s' )}}</span> 
-                                                <p class="uk-margin-small">{!! substr($testimoni->deskripsi_testi,0,10) !!}</p>
+                                                <p class="uk-margin-small">{!! substr($testimoni->deskripsi_testi,0,40) !!}</p>
                                             </div>
                                         </div>
                                     </div>

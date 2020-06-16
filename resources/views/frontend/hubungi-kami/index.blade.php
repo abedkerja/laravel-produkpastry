@@ -104,23 +104,25 @@
                                 <div class="uk-card-media-top">
                                     <img src="https://mbitelecom.co.id/wp-content/uploads/2020/01/hubungi-kami-ppob-mbi-telecom-1024x773.png" alt="">
                                 </div>
+                                {{-- <div></div> --}}
+                                <hr>
                                 <div class="uk-card-body">
                                     <h6 class="uk-margin-small-bottom uk-margin-remove-adjacent uk-text-bold uk-text-uppercase">Hubungi Kami</h6>
                                     <p class="uk-text-small uk-text-muted">Duis aute irure dolor in reprehenderit in voluptate velit</p>
                                 </div>
-                                <div class="uk-card-footer">
+                                {{-- <div class="uk-card-footer">
                                     <div class="uk-grid uk-grid-small uk-grid-divider uk-flex uk-flex-middle" data-uk-grid="">
                                         <div class="uk-width-expand uk-text-small uk-first-column">
                                             <a class="uk-icon-link uk-icon" data-uk-tooltip="title: Selengkapnya" data-uk-icon="icon: chevron-right; ratio: 0.8" href="#">Selengkapnya</a>
                                         </div>
                                         <div class="uk-width-auto uk-text-right">
-                                            {{-- <a href="#" data-uk-tooltip="title: Twitter" class="uk-icon-link uk-icon" data-uk-icon="icon:twitter; ratio: 0.8" title="" aria-expanded="false"></a> --}}
+                                            <a href="#" data-uk-tooltip="title: Twitter" class="uk-icon-link uk-icon" data-uk-icon="icon:twitter; ratio: 0.8" title="" aria-expanded="false"></a>
                                             <a href="https://www.instagram.com/omah_pastry.id/" target='_blank' data-uk-tooltip="title: Instagram" class="uk-icon-link uk-icon" data-uk-icon="icon:instagram; ratio: 0.8" title="" aria-expanded="false"></a>
                                             <a href="https://bit.ly/3bFoNT1" target="_blank" data-uk-tooltip="title: Whatsapp" class="uk-icon-link uk-icon" data-uk-icon="icon:whatsapp; ratio: 0.8" title="" aria-expanded="false"></a>
                                             <a href="https://www.facebook.com/Omah-Pastry-1410708402353240/" target='_blank' data-uk-tooltip="title: Facebook" class="uk-icon-link uk-icon" data-uk-icon="icon:facebook; ratio: 0.8" title="" aria-expanded="false"></a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div>
@@ -135,6 +137,7 @@
                                 <div class="uk-card-media-top">
                                     <img src="https://kedaikayumanis.com/v2019/wp-content/uploads/2019/01/lokasi-kedai-kayumanis-matraman-jakarta-300x300.png" alt="">
                                 </div>
+                                <hr>
                                 <div class="uk-card-body">
                                     <h6 class="uk-margin-small-bottom uk-margin-remove-adjacent uk-text-bold uk-text-uppercase">Alamat Kami</h6>
                                     <p class="uk-text-small uk-text-muted">
@@ -143,19 +146,20 @@
                                     </p>
                                     {{-- <span class="uk-text-muted"></span> --}}
                                 </div>
-                                <div class="uk-card-footer">
+                                
+                                {{-- <div class="uk-card-footer">
                                     <div class="uk-grid uk-grid-small uk-grid-divider uk-flex uk-flex-middle" data-uk-grid="">
                                         <div class="uk-width-expand uk-text-small uk-first-column">
                                             <a class="uk-icon-link uk-icon" data-uk-tooltip="title: Selengkapnya" data-uk-icon="icon: chevron-right; ratio: 0.8" href="#">Selengkapnya</a>
                                         </div>
                                         <div class="uk-width-auto uk-text-right">
-                                            {{-- <a href="#" data-uk-tooltip="title: Twitter" class="uk-icon-link uk-icon" data-uk-icon="icon:twitter; ratio: 0.8" title="" aria-expanded="false"></a> --}}
+                                            <a href="#" data-uk-tooltip="title: Twitter" class="uk-icon-link uk-icon" data-uk-icon="icon:twitter; ratio: 0.8" title="" aria-expanded="false"></a>
                                             <a href="https://www.instagram.com/omah_pastry.id/" target='_blank' data-uk-tooltip="title: Instagram" class="uk-icon-link uk-icon" data-uk-icon="icon:instagram; ratio: 0.8" title="" aria-expanded="false"></a>
                                             <a href="https://bit.ly/3bFoNT1" target="_blank" data-uk-tooltip="title: Whatsapp" class="uk-icon-link uk-icon" data-uk-icon="icon:whatsapp; ratio: 0.8" title="" aria-expanded="false"></a>
                                             <a href="https://www.facebook.com/Omah-Pastry-1410708402353240/" target='_blank' data-uk-tooltip="title: Facebook" class="uk-icon-link uk-icon" data-uk-icon="icon:facebook; ratio: 0.8" title="" aria-expanded="false"></a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
         
                         </div>
@@ -173,23 +177,25 @@
                                 <div class="uk-card-media-top">
                                     <img src="https://gosocial.co.id/assets/landing/image/service_sme_header.png" alt="">
                                 </div>
+                                <hr>
                                 <div class="uk-card-body">
                                     <h6 class="uk-margin-small-bottom uk-margin-remove-adjacent uk-text-bold uk-text-uppercase">Ikuti Media Sosial Kami</h6>
                                     <p class="uk-text-small uk-text-muted">Duis aute irure dolor in reprehenderit in voluptate velit</p>
                                 </div>
-                                <div class="uk-card-footer">
+                                
+                                {{-- <div class="uk-card-footer">
                                     <div class="uk-grid uk-grid-small uk-grid-divider uk-flex uk-flex-middle" data-uk-grid="">
                                         <div class="uk-width-expand uk-text-small uk-first-column">
                                             <a class="uk-icon-link uk-icon" data-uk-tooltip="title: Selengkapnya" data-uk-icon="icon: chevron-right; ratio: 0.8" href="#">Selengkapnya</a>
                                         </div>
                                         <div class="uk-width-auto uk-text-right">
-                                            {{-- <a href="#" data-uk-tooltip="title: Twitter" class="uk-icon-link uk-icon" data-uk-icon="icon:twitter; ratio: 0.8" title="" aria-expanded="false"></a> --}}
+                                            <a href="#" data-uk-tooltip="title: Twitter" class="uk-icon-link uk-icon" data-uk-icon="icon:twitter; ratio: 0.8" title="" aria-expanded="false"></a>
                                             <a href="https://www.instagram.com/omah_pastry.id/" target='_blank' data-uk-tooltip="title: Instagram" class="uk-icon-link uk-icon" data-uk-icon="icon:instagram; ratio: 0.8" title="" aria-expanded="false"></a>
                                             <a href="https://bit.ly/3bFoNT1" target="_blank" data-uk-tooltip="title: Whatsapp" class="uk-icon-link uk-icon" data-uk-icon="icon:whatsapp; ratio: 0.8" title="" aria-expanded="false"></a>
                                             <a href="https://www.facebook.com/Omah-Pastry-1410708402353240/" target='_blank' data-uk-tooltip="title: Facebook" class="uk-icon-link uk-icon" data-uk-icon="icon:facebook; ratio: 0.8" title="" aria-expanded="false"></a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         @endforeach

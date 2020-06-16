@@ -89,6 +89,10 @@
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="{{asset('js/backend/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('js/backend/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+    {{-- <script src="{{asset('js/backend/demo/chart-bar-demo.js')}}"></script> --}}
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   
     <!-- Core plugin JavaScript-->
     <script src="{{asset('js/backend/vendor/jquery-easing/jquery.easing.min.js')}}"></script>

@@ -98,6 +98,21 @@
             Hubungi Kami & Testimonial
         </div>
 
+        {{-- <li class="nav-item active">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSubs" aria-expanded="false" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-closed-captioning"></i>
+            <span>Subtitle</span>
+            </a>
+            <div id="collapseSubs" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
+               <div class="bg-white py-2 collapse-inner rounded">
+                  <h6 class="collapse-header">Subtitle Menu:</h6>
+                  <a class="collapse-item" href="/upload-subtitle">Upload Subtitle</a>
+                  <a class="collapse-item" href="/subscene">Upload from Subscene</a>
+                  <a class="collapse-item" href="/subtitle-manager">Subtitle Manager</a>
+               </div>
+            </div>
+         </li> --}}
+
         <!-- Nav Item - Hubungi Kami -->
         <li class="nav-item">
             <a class="nav-link" href="{{route ('hubungi-kami.index')}}">
