@@ -248,12 +248,12 @@
 
                 // The data for our dataset
                 data: {
-                    labels: ['Produk', 'Resep', 'Blog', 'Galeri' ],
+                    labels: ['Produk', 'Resep', 'Blog' ],
                     datasets: [{
                         label: 'Pengunjung Halaman Per Hari',
                         backgroundColor: 'rgba(78, 115, 223, 1)',
                         borderColor: 'rgba(78, 115, 223, 1)',
-                        data: [ {{$VisitsDayProduk}} , {{$VisitsDayResep}} , {{$VisitsDayBlog}}, {{$VisitsDayGaleri}} ]
+                        data: [ {{$VisitsDayProduk}} , {{$VisitsDayResep}} , {{$VisitsDayBlog}} ]
                     }]
                 },
 
@@ -276,12 +276,12 @@
 
                 // The data for our dataset
                 data: {
-                    labels: ['Produk', 'Resep', 'Blog', 'Galeri' ],
+                    labels: ['Produk', 'Resep', 'Blog' ],
                     datasets: [{
                         label: 'Pengunjung Halaman Per Minggu',
                         backgroundColor: 'rgba(78, 115, 223, 1)',
                         borderColor: 'rgba(78, 115, 223, 1)',
-                        data: [ {{$VisitsWeekProduk}} , {{$VisitsWeekResep}} , {{$VisitsWeekBlog}}, {{$VisitsWeekGaleri}} ]
+                        data: [ {{$VisitsWeekProduk}} , {{$VisitsWeekResep}} , {{$VisitsWeekBlog}} ]
                     }]
                 },
 
@@ -305,7 +305,7 @@
 
                 // The data for our dataset
                 data: {
-                    labels: ['Produk', 'Resep', 'Blog', 'Galeri' ],
+                    labels: ['Produk', 'Resep', 'Blog' ],
                     datasets: [{
                         label: 'Pengunjung Halaman Per Bulan',
                         backgroundColor: 'rgba(78, 115, 223, 1)',
@@ -322,7 +322,7 @@
                         //     'rgb(231, 74, 59)',
                         //     'rgb(133, 135, 150)'
                         // ],
-                        data: [ {{$VisitsMonthProduk}} , {{$VisitsMonthResep}} , {{$VisitsMonthBlog}}, {{$VisitsMonthGaleri}} ]
+                        data: [ {{$VisitsMonthProduk}} , {{$VisitsMonthResep}} , {{$VisitsMonthBlog}} ]
                     }]
                 },
 

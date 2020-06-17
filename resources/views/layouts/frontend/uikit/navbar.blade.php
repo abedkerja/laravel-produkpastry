@@ -58,7 +58,7 @@
                             </button>
                         </div>
                         <div class="uk-grid-item-match">
-                            <div class="uk-container-item-padding-remove-right uk-flex uk-flex-center uk-flex-middle uk-svg">
+                            <div class="uk-container-item-padding-remove-right uk-flex uk-flex-center uk-flex-middle  uk-svg">
                                 <a class="uk-display-block" href="#"><img src="images/frontend/undraw_cooking_lyxy.svg" alt="" style="height:400px"></a>
                             </div>
                         </div>

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent;
 
 // use Illuminate\Database\Eloquent\Model;
 
-//use Illuminate\Database\Eloquent;
+// use Illuminate\Database\Eloquent;
 use App\Model;
 use Redis;
 
@@ -117,9 +117,11 @@ class DepanController extends Controller
         $this->data['title']    = 'Daftar Galeri';
 
         $this->data['galeri']    = Model\Galeri::where('status', 'PUBLISH')->orderBy('id','asc')->get();
-        
+        // dd($this->data['galeri']);
+
         // $this->data['galeri']->visits()->increment();
         // $this->data['galeri']->visits()->count();
+        // dd($this->data['galeri']);
 
         return view('frontend.galeri.index', $this->data);
     }

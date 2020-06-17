@@ -36,19 +36,19 @@ class DashboardCtrl extends Controller
         $this->data['VisitsDayProduk']       = visits('App\Model\Produk')->period('day')->count();
         $this->data['VisitsDayResep']        = visits('App\Model\Resep')->period('day')->count();
         $this->data['VisitsDayBlog']         = visits('App\Model\Blog')->period('day')->count();
-        $this->data['VisitsDayGaleri']         = visits('App\Model\Galeri')->period('day')->count();
+        // $this->data['VisitsDayGaleri']         = visits('App\Model\Galeri')->period('day')->count();
 
         // Perhitungan Jumlah Pengunjung Per Minggu
         $this->data['VisitsWeekProduk']       = visits('App\Model\Produk')->period('week')->count();
         $this->data['VisitsWeekResep']        = visits('App\Model\Resep')->period('week')->count();
         $this->data['VisitsWeekBlog']         = visits('App\Model\Blog')->period('week')->count();
-        $this->data['VisitsWeekGaleri']         = visits('App\Model\Galeri')->period('week')->count();
+        // $this->data['VisitsWeekGaleri']         = visits('App\Model\Galeri')->period('week')->count();
 
         // Perhitungan Jumlah Pengunjung Per Bulan
         $this->data['VisitsMonthProduk']       = visits('App\Model\Produk')->period('month')->count();
         $this->data['VisitsMonthResep']        = visits('App\Model\Resep')->period('month')->count();
         $this->data['VisitsMonthBlog']         = visits('App\Model\Blog')->period('month')->count();
-        $this->data['VisitsMonthGaleri']         = visits('App\Model\Galeri')->period('month')->count();
+        // $this->data['VisitsMonthGaleri']         = visits('App\Model\Galeri')->period('month')->count();
 
         return view('backend.dashboard', $this->data);
     }
